@@ -168,7 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Orchid\Platform\Providers\FoundationServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -15,17 +15,17 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        // if (request()->category) {
-        //     $products = Product::with('categories')->whereHas('categories', function ($query) {
-        //         $query->where('slug', request()->category);
-        //     })->get();
+        if (request()->category) {
+            $products = Product::with('categories')->whereHas('categories', function ($query) {
+                $query->where('slug', request()->category);
+            })->get();
             
-        //     $categories = Category::all();
-        // } else {
+            $categories = Category::all();
+        } else {
 
-        $products = Product::inRandomOrder()->paginate(8);
-        $categories = Category::all();
-     
+            $products = Product::inRandomOrder()->paginate(8);
+            $categories = Category::all();
+        }
         return view('pages.dashboard')->with([
             'categories' => $categories,
             'products' => $products,
@@ -63,10 +63,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $singleCategory = Category::find($category);
-        $products = $singleCategory->products;
-
-        dd($request->all());
+        
     }
 
     /**
