@@ -4,34 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Commerce @yield('title')</title>
-    <link href="{{ asset('css/fontawesome/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-    <style>
-        #navbar {
-            min-height: 150px;
-            height: relative;
-            background-color: white;
-            color: #FFFFFF;
-            font-size:.8em;
-            margin-top:25px;
-            padding-top: 15px;
-            padding-bottom: 10px;
-            position:fixed;
-            left:0;
-            bottom:0;
-            width:100%;
-
-        }
-        p {
-            color: wheat;
-            
-        }
-    </style>
 <body>
-@yield('bottom')
-<nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
+    <footer id="footer">
+        
+    </footer>
+</body>
+</html>
+
+{{-- <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -48,8 +31,4 @@
             </div>
         </div>
     </div>
-</nav>
-</body>
-
-</html>
-    
+</nav>  --}}

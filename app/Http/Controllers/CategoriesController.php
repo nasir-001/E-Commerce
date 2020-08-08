@@ -12,11 +12,21 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category)
+    public function index()
     {
-        $products = Product::all();
+
+        // if (request()->category) {
+        //     $products = Product::with('categories')->whereHas('categories', function ($query) {
+        //         $query->where('slug', request()->category);
+        //     })->get();
+            
+        //     $categories = Category::all();
+        // } else {
+
+        $products = Product::inRandomOrder()->paginate(8);
         $categories = Category::all();
-        return view('dashboard')->with([
+     
+        return view('pages.dashboard')->with([
             'categories' => $categories,
             'products' => $products,
         ]);
@@ -51,7 +61,10 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $singleCategory = Category::find($category);
+        $products = $singleCategory->products;
+
+        dd($request->all());
     }
 
     /**
