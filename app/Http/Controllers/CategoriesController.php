@@ -50,7 +50,9 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newCart = Cart::add($request->id, $request->name, $request->price, 1)->associte('App\Product');
+
+        return \redirect()->route('dashboard.index')->with('message', 'Item was added to your cart!');
     }
 
     /**

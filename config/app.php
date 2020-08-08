@@ -123,6 +123,9 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    // Custom Categories by Melihovv
+    'Cart' => 'Melihovv\ShoppingCart\Facades\ShoppingCart',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -187,6 +190,8 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+
+    
 
     'aliases' => [
 
