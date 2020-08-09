@@ -11002,7 +11002,7 @@ a:hover {
 
 @media screen and (max-width: 710px) {
   img {
-    width: 100px;
+    width: 120px;
   }
 
   .sidenav h3 {
@@ -11011,6 +11011,10 @@ a:hover {
 
   a h4 {
     font-size: 1em;
+  }
+
+  h1 {
+    font-size: 2em;
   }
 
   #sidebar a {

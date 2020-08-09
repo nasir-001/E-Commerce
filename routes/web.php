@@ -10,6 +10,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'CategoriesController@index')->name('dashboard.index');
+Route::resource('/category', 'CategoriesController');
 
-Route::post('/dashboard', 'CategoriesController@store')->name('dashboard.store');
+// Route::post('/dashboard', 'CategoriesController@store')->name('dashboard.store');

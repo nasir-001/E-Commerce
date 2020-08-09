@@ -15,17 +15,9 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        if (request()->category) {
-            $products = Product::with('categories')->whereHas('categories', function ($query) {
-                $query->where('slug', request()->category);
-            })->get();
-            
-            $categories = Category::all();
-        } else {
-
-            $products = Product::inRandomOrder()->paginate(8);
-            $categories = Category::all();
-        }
+        $products = Product::inRandomOrder()->paginate(10);
+        $categories = Category::all();
+        
         return view('pages.dashboard')->with([
             'categories' => $categories,
             'products' => $products,
@@ -52,7 +44,7 @@ class CategoriesController extends Controller
     {
         $newCart = Cart::add($request->id, $request->name, $request->price, 1)->associte('App\Product');
 
-        return \redirect()->route('dashboard.index')->with('message', 'Item was added to your cart!');
+        return redirect()->route('dashboard.index')->with('message', 'Item was added to your cart!');
     }
 
     /**
@@ -61,9 +53,16 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    public function show(Category $category, Request $request)
     {
         
+        $categories = Category::find($request->category);
+  
+        return view('pages.products')->with([
+            'categories' => $categories,
+        ]);
+
     }
 
     /**
