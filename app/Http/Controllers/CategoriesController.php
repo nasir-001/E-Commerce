@@ -56,13 +56,13 @@ class CategoriesController extends Controller
 
     public function show(Category $category, Request $request)
     {
-        
         $categories = Category::find($request->category);
-  
+        $category->products()->where('category_id', $request->category->id)->paginate(12);
         return view('pages.products')->with([
             'categories' => $categories,
         ]);
-
+      
+  
     }
 
     /**

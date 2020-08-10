@@ -74,6 +74,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title('Docs')
                 ->icon('icon-docs')
                 ->url('https://orchid.software/en/docs'),
+            
+            ItemMenu::label('Email sender')
+                ->icon('icon-envelope-letter')
+                ->route('platform.email')
+                ->title('Emails')
         ];
     }
 

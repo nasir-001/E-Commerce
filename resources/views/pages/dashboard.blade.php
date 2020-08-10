@@ -7,10 +7,11 @@
             @foreach ($products as $product)
                 <div class="cols m-4 shadow-lg product"> 
                     <a href="">
-                        <h4>{{ $product->name }}</h4>
+                        <h4 class="text-center">{{ $product->name }}</h4>
                         <img src="{{ asset('images/welcome2.jpg') }}" width="150px">
                         <br>
-                        <small>{{ $product->details }}</small>
+                        <small>{{ $product->details }}</small><br>
+                        <h6 class="float-right mr-1">&dollar; {{ $product->price }}</h6>
                     </a>
                 </div>
             @endforeach

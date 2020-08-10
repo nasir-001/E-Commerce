@@ -16,6 +16,7 @@ use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use Illuminate\Support\Facades\Route;
 
+use App\Orchid\Screens\EmailSenderScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -49,3 +50,6 @@ Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.exampl
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
 
 //Route::screen('idea', 'Idea::class','platform.screens.idea');
+
+// My Routes
+Route::screen('email', EmailSenderScreen::class)->name('platform.email');

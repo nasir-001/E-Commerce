@@ -42,5 +42,6 @@
         @endforeach
     </div>
     @endforeach
+    {{-- {{ $categories->links() }} --}}
 
 @endsection
