@@ -56,15 +56,20 @@ class CategoriesController extends Controller
 
     public function show(Category $category, Request $request)
     {
-        $categories = Category::find($request->category);
-        $category->products()->where('category_id', $request->category->id)->paginate(12);
+        $category = Category::where('id', $request->category->id)->first();
+        $products = $category->products()->paginate(10);
+        $categories = Category::all();
+    
         return view('pages.products')->with([
+            'category' => $category,
+            'products' => $products,
             'categories' => $categories,
         ]);
       
   
     }
 
+   
     /**
      * Show the form for editing the specified resource.
      *
