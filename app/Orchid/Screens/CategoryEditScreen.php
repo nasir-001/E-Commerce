@@ -123,8 +123,6 @@ class CategoryEditScreen extends Screen
 
     public function createOrUpdate(Category $category, Request $request, Product $product)
     {
-        // $category->fill($request->get('category', 'product'))->save();
-        // $category->products->fill($request->get('product'))->save();
         $category->fill($request->all())->save();
         $product = $request->get('product');
         $category->products()->attach($product);
