@@ -16,7 +16,10 @@ use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use Illuminate\Support\Facades\Route;
 
+            // My Classess
 use App\Orchid\Screens\EmailSenderScreen;
+use App\Orchid\Screens\CategoryEditScreen;
+use App\Orchid\Screens\CategoryListScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -51,5 +54,12 @@ Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('pla
 
 //Route::screen('idea', 'Idea::class','platform.screens.idea');
 
-// My Routes
+                 // My Routes
+// Email Sender Route
 Route::screen('email', EmailSenderScreen::class)->name('platform.email');
+
+// Creating category Route
+Route::screen('category/{category?}', CategoryEditScreen::class)->name('platform.category.edit');
+
+// Listing all Category Route
+Route::screen('categories', CategoryListScreen::class)->name('platform.category.list');

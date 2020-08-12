@@ -78,7 +78,16 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Email sender')
                 ->icon('icon-envelope-letter')
                 ->route('platform.email')
-                ->title('Emails')
+                ->title('Emails'),
+
+            ItemMenu::label('Create category')
+                ->icon('icon-layers')
+                ->route('platform.category.edit')
+                ->title('Category'),
+            
+            ItemMenu::label('View categories')
+                ->icon('icon-dropbox')
+                ->route('platform.category.list'),
         ];
     }
 

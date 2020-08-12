@@ -55,8 +55,18 @@ Breadcrumbs::for('platform.example.layouts', function (BreadcrumbsGenerator $tra
     $trail->push(__('Overview layouts'));
 });
 
-
+            // My BreadCrumbs
 Breadcrumbs::for('platform.email', function ($trail) {
     $trail->parent('platform.index');
     $trail->push('Email sender');
+});
+
+Breadcrumbs::for('platform.category.edit', function ($trail) {
+    $trail->parent('platform.index');
+    $trail->push('Create categories');
+});
+
+Breadcrumbs::for('platform.category.list', function ($trail) {
+    $trail->parent('platform.index');
+    $trail->push('Create categories');
 });

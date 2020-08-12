@@ -5,6 +5,7 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
+
 class CategoriesController extends Controller
 {
     /**
@@ -65,7 +66,6 @@ class CategoriesController extends Controller
             'products' => $products,
             'categories' => $categories,
         ]);
-      
   
     }
 
