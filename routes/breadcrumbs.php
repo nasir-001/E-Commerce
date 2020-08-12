@@ -70,3 +70,13 @@ Breadcrumbs::for('platform.category.list', function ($trail) {
     $trail->parent('platform.index');
     $trail->push('Create categories');
 });
+
+Breadcrumbs::for('platform.product.edit', function($trail) {
+    $trail->parent('platform.index');
+    $trail->push('Create products');
+});
+
+Breadcrumbs::for('platform.product.list', function($trail) {
+    $trail->parent('platform.index');
+    $trail->push('Create products');
+});

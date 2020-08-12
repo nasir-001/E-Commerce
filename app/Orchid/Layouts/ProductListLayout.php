@@ -2,12 +2,12 @@
 
 namespace App\Orchid\Layouts;
 
-use App\Category;
-use Orchid\Screen\Layouts\Table;
+use App\Product;
 use Orchid\Screen\TD;
 use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Layouts\Table;
 
-class CategoryListLayout extends Table
+class ProductListLayout extends Table
 {
     /**
      * Data source.
@@ -17,7 +17,7 @@ class CategoryListLayout extends Table
      *
      * @var string
      */
-    protected $target = 'categories';
+    protected $target = 'products';
 
     /**
      * Get the table cells to be displayed.
@@ -26,17 +26,17 @@ class CategoryListLayout extends Table
      */
     protected function columns(): array
     {
-        /**
-        * @return TD[]
-        */
         return [
             TD::set('name', 'Name')
-                ->render(function(Category $category){
-                    return Link::make($category->name)
-                        ->route('platform.category.edit', $category);
+                ->render(function(Product $product){
+                    return Link::make($product->name)
+                        ->route('platform.product.edit', $product);
                 }),
-            
-            TD::set('slug', 'Title'),
+
+            TD::set('slug', 'title'),
+            TD::set('details', 'Details'),
+            TD::set('description', 'Descriptions'),
+            TD::set('price', 'Prices'),
             TD::set('created_at', 'Created'),
             TD::set('updated_at', 'Last edit'),
         ];

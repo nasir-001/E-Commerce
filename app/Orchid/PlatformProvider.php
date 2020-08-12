@@ -88,6 +88,15 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('View categories')
                 ->icon('icon-dropbox')
                 ->route('platform.category.list'),
+
+            ItemMenu::label('Create product')
+                ->icon('icon-module')
+                ->route('platform.product.edit')
+                ->title('Products'),
+
+            ItemMenu::label('View products')
+                ->icon('icon-modules')
+                ->route('platform.product.list')
         ];
     }
 

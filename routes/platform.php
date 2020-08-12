@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 use App\Orchid\Screens\EmailSenderScreen;
 use App\Orchid\Screens\CategoryEditScreen;
 use App\Orchid\Screens\CategoryListScreen;
+use App\Orchid\Screens\ProductEditScreen;
+use App\Orchid\Screens\ProductListScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -63,3 +65,9 @@ Route::screen('category/{category?}', CategoryEditScreen::class)->name('platform
 
 // Listing all Category Route
 Route::screen('categories', CategoryListScreen::class)->name('platform.category.list');
+
+// Creating product Route
+Route::screen('product/{product?}', ProductEditScreen::class)->name('platform.product.edit');
+
+// Listing all Product Route
+Route::screen('products', ProductListScreen::class)->name('platform.product.list');

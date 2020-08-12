@@ -31,7 +31,7 @@ class CategoryEditScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Available Categories';
+    public $description = 'Category';
 
     /**
      * @var bool
@@ -41,9 +41,11 @@ class CategoryEditScreen extends Screen
     /**
      * Query data.
      *
+     * @param Category
+     * 
      * @return array
      */
-    public function query(Category $category, Product $product): array
+    public function query(Category $category): array
     {
         $this->exists = $category->exists;
 
@@ -53,14 +55,16 @@ class CategoryEditScreen extends Screen
 
         return [
             'category' => $category,
-            'product' => $product
         ];
     }
 
     /**
      * Button commands.
      *
+     * @return Link[]
+     * 
      * @return Action[]
+     * 
      */
     public function commandBar(): array
     {
@@ -131,6 +135,12 @@ class CategoryEditScreen extends Screen
 
         return redirect()->route('platform.category.list');
     }
+    /**
+     * @param Category $category
+     * @return \Illuminate\Http\RedirectResponse
+     * 
+     * @throws \Exception
+     */
 
     public function remove(Category $category)
     {
