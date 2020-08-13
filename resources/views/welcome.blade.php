@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawesome/css/all.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}" rel="stylesheet"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         <title>Welcome | Hamdala~Store</title>
         <style>
             
@@ -58,7 +58,7 @@
         </style>
     </head>
     <body>
-        <div id="container">
+        <div id="container" class="mb-2">
             <div  id="main">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
                     <h1 style="color: white;">Hamdala</h1>
@@ -112,80 +112,24 @@
                             aspernatur quidem non quis consequatur voluptatibus quae?
                         </div>
                     </div>
+                   
                     <div class="col-9 pr-5">
                         <div class="card shadow-lg" id="productImage">
                             <div class="row justify-content-center">
+                                @foreach ($products as $product)
                                 <div class="m-3">
+                                    <h4>{{ $product->name }}</h4><br/>
                                     <a href="#"><img src="{{ asset('images/welcome1.jpg') }}" width="150px">
                                     <p class="text-center">Price &dollar;1500</p>
                                     </a>
                                 </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome2.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome3.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome2.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome4.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome5.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome6.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome7.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome8.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome1.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome2.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome3.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
-                                <div class="m-3">
-                                    <a href="#"><img src="{{ asset('images/welcome4.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
+                        {{ $products->links() }}
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="mt-5">
             @include('includes.footer')

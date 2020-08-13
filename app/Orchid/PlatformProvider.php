@@ -26,59 +26,54 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            ItemMenu::label('Example screen')
-                ->icon('icon-monitor')
-                ->route('platform.example')
-                ->title('Navigation'),
+            // ItemMenu::label('Example screen')
+            //     ->icon('icon-monitor')
+            //     ->route('platform.example')
+            //     ->title('Navigation'),
 
-            ItemMenu::label('Dropdown menu')
-                ->slug('example-menu')
-                ->icon('icon-code')
-                ->childs(),
+            // ItemMenu::label('Dropdown menu')
+            //     ->slug('example-menu')
+            //     ->icon('icon-code')
+            //     ->childs(),
 
-            ItemMenu::label('Sub element item 1')
-                ->place('example-menu')
-                ->icon('icon-bag'),
+            // ItemMenu::label('Sub element item 1')
+            //     ->place('example-menu')
+            //     ->icon('icon-bag'),
 
-            ItemMenu::label('Sub element item 2')
-                ->place('example-menu')
-                ->icon('icon-heart'),
+            // ItemMenu::label('Sub element item 2')
+            //     ->place('example-menu')
+            //     ->icon('icon-heart'),
 
-            ItemMenu::label('Basic Elements')
-                ->title('Form controls')
-                ->icon('icon-note')
-                ->route('platform.example.fields'),
+            // ItemMenu::label('Basic Elements')
+            //     ->title('Form controls')
+            //     ->icon('icon-note')
+            //     ->route('platform.example.fields'),
 
-            ItemMenu::label('Advanced Elements')
-                ->icon('icon-briefcase')
-                ->route('platform.example.advanced'),
+            // ItemMenu::label('Advanced Elements')
+            //     ->icon('icon-briefcase')
+            //     ->route('platform.example.advanced'),
 
-            ItemMenu::label('Text Editors')
-                ->icon('icon-list')
-                ->route('platform.example.editors'),
+            // ItemMenu::label('Text Editors')
+            //     ->icon('icon-list')
+            //     ->route('platform.example.editors'),
 
-            ItemMenu::label('Overview layouts')
-                ->title('Layouts')
-                ->icon('icon-layers')
-                ->route('platform.example.layouts'),
+            // ItemMenu::label('Overview layouts')
+            //     ->title('Layouts')
+            //     ->icon('icon-layers')
+            //     ->route('platform.example.layouts'),
 
-            ItemMenu::label('Chart tools')
-                ->icon('icon-bar-chart')
-                ->route('platform.example.charts'),
+            // ItemMenu::label('Chart tools')
+            //     ->icon('icon-bar-chart')
+            //     ->route('platform.example.charts'),
 
-            ItemMenu::label('Cards')
-                ->icon('icon-grid')
-                ->route('platform.example.cards'),
+            // ItemMenu::label('Cards')
+            //     ->icon('icon-grid')
+            //     ->route('platform.example.cards'),
 
-            ItemMenu::label('Documentation')
-                ->title('Docs')
-                ->icon('icon-docs')
-                ->url('https://orchid.software/en/docs'),
-            
-            ItemMenu::label('Email sender')
-                ->icon('icon-envelope-letter')
-                ->route('platform.email')
-                ->title('Emails'),
+            // ItemMenu::label('Documentation')
+            //     ->title('Docs')
+            //     ->icon('icon-docs')
+            //     ->url('https://orchid.software/en/docs'),
 
             ItemMenu::label('Create category')
                 ->icon('icon-layers')
@@ -92,11 +87,16 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Create product')
                 ->icon('icon-module')
                 ->route('platform.product.edit')
-                ->title('Products'),
+                ->title('Product'),
 
             ItemMenu::label('View products')
                 ->icon('icon-modules')
-                ->route('platform.product.list')
+                ->route('platform.product.list'),
+
+            ItemMenu::label('Email sender')
+                ->icon('icon-envelope-letter')
+                ->route('platform.email')
+                ->title('Emails'),
         ];
     }
 

@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+
+use App\Product;
+use App\Category;
+use Orchid\Platform\Dashboard;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+    
     }
 }

@@ -1,8 +1,5 @@
 <div class="text-center">
     <p class="small m-n">
-      {{ __('The application code is published under the MIT license.') }} 2016 - {{date('Y')}}<br>
-        <a href="http://orchid.software" target="_blank" rel="noopener">
-            {{ __('Currently') }} v{{\Orchid\Platform\Dashboard::VERSION}}
-        </a>
+      {{ __('This application code is written by Nasir') }} {{date('Y')}}<br>
     </p>
 </div>

@@ -34,9 +34,9 @@ class ProductListLayout extends Table
                 }),
 
             TD::set('slug', 'title'),
+            TD::set('price', 'Prices'),
             TD::set('details', 'Details'),
             TD::set('description', 'Descriptions'),
-            TD::set('price', 'Prices'),
             TD::set('created_at', 'Created'),
             TD::set('updated_at', 'Last edit'),
         ];
