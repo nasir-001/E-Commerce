@@ -45,7 +45,7 @@ class ProductListScreen extends Screen
         return [
             Link::make('Created New')
                 ->icon('icon-pencil')
-                ->route('platform.product.list')
+                ->route('platform.product.edit')
         ];
     }
 

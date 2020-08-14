@@ -15,7 +15,6 @@ class CartController extends Controller
      */
     public function index()
     {
-        
         return view('pages.cart');
     }
 
@@ -37,10 +36,17 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $newCart = Cart::add($request->id, $request->name, $request->price, 1);
-        $newCart = Cart::get($newCart->getUniqueId());
-        return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
+       
+        $cartItem = Cart::add($request->id, $request->name, $request->price, 1);
+        $cartContent = Cart::content();
+        return view('pages.cart')->with([
+            'cartItem' => $request->cartItem,
+            'cartContent' => $cartContent
+            ]);
+        
     }
+
+    // return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
 
     /**
      * Display the specified resource.
