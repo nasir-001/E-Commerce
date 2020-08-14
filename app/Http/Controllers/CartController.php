@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Melihovv\ShoppingCart\Facades\ShoppingCart;
+use App\Product;
+use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
 
 class CartController extends Controller
 {
@@ -14,6 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
+        
         return view('pages.cart');
     }
 
@@ -24,7 +26,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +37,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newCart = Cart::add($request->id, $request->name, $request->price, 1);
+        $newCart = Cart::get($newCart->getUniqueId());
+        return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
     }
 
     /**

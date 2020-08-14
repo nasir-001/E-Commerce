@@ -41,11 +41,9 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $newCart = Cart::add($request->id, $request->name, $request->price, 1)->associte('App\Product');
 
-        return redirect()->route('dashboard.index')->with('message', 'Item was added to your cart!');
     }
 
     /**
