@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
-use App\Category;
-use Illuminate\Http\Request;
 
-class ProductController extends Controller
+use Illuminate\Http\Request;
+use Melihovv\ShoppingCart\Facades\ShoppingCart;
+
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        return view('pages.cart');
     }
 
     /**
@@ -44,12 +44,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        $products = Product::find($product);
-        return view('pages.singleProduct')->with([
-            'products' => $products
-        ]);
+        //
     }
 
     /**

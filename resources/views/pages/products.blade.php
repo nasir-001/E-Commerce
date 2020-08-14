@@ -7,7 +7,7 @@
         <div class="row mt-5 m-5">
             @foreach ($products as $product)
                 <div class="cols m-4 shadow-lg product product-box"> 
-                    <a href="">
+                    <a href="/product/{{ $product->id }}">
                         <h4 class="text-center">{{ $product->name }}</h4>
                         <img class="m-auto" src="{{ asset('images/welcome2.jpg') }}" width="150px">
                         <br>
