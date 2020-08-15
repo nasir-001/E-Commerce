@@ -72,15 +72,15 @@
                             @else
                                 <ul class="navbar-nav ml-auto float-right">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="">Blog</a>
+                                        <a class="nav-link" href="">Blog <span class="fas fa-blog"></span></a>
                                     </li>
 
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                        <a class="nav-link" href="{{ route('login') }}">Login <span class="fas fa-sign-in-alt"></span></a>
                                     </li>
 
                                     @if (Route::has('register'))
-                                        <a style="font-size: 20px; color: white;" class="nav-link" href="{{ route('register') }}">Register</a>
+                                        <a style="font-size: 20px; color: white;" class="nav-link" href="{{ route('register') }}">Register <span class="fas fa-layer-group"></span></a>
                                     @endif
                                     
                                 </ul>
@@ -90,44 +90,25 @@
                     @endif
                 </nav>
             </div>
-            
-                <div class="row" id="system-view">
-                    <div class="col-3 pl-5">
-                        <div class="card shadow-lg justify-content p-2" id="Introduction">
-                            <h1 class="text-center">Hamdala</h1>
-                            Lorem ipsum, dolor sit amet consectetur 
-                            adipisicing elit. Culpa veritatis, quam 
-                            nam laborum nemo eaque facere, nostrum 
-                            dolorum nesciunt, optio hic autem quibusdam 
-                            aspernatur quidem non quis consequatur voluptatibus quae?
-                            Lorem ipsum, dolor sit amet consectetur 
-                            adipisicing elit. Culpa veritatis, quam 
-                            nam laborum nemo eaque facere, nostrum 
-                            dolorum nesciunt, optio hic autem quibusdam 
-                            aspernatur quidem non quis consequatur voluptatibus quae?
-                            Lorem ipsum, dolor sit amet consectetur 
-                            adipisicing elit. Culpa veritatis, quam 
-                            nam laborum nemo eaque facere, nostrum 
-                            dolorum nesciunt, optio hic autem quibusdam 
-                            aspernatur quidem non quis consequatur voluptatibus quae?
-                        </div>
-                    </div>
-                   
-                    <div class="col-9 pr-5">
-                        <div class="card shadow-lg" id="productImage">
-                            <div class="row justify-content-center">
-                                @foreach ($products as $product)
-                                <div class="m-3">
-                                    <h4>{{ $product->name }}</h4><br/>
-                                    <a href="#"><img src="{{ asset('images/welcome1.jpg') }}" width="150px">
-                                    <p class="text-center">Price &dollar;1500</p>
-                                    </a>
+            <div class="container justify-content-center"></div>
+                <div class="card-body">
+                    <div class="row">
+                        @foreach ($products as $product)
+                            <a href="/product/{{ $product->id }}">
+                                <div class="card border ml-5 m-3 shadow-lg">
+                                    <h4 class="text-center">{{ $product->name }}</h4>
+                                    <img class="shadow-lg" src="{{ asset('images/welcome2.jpg') }}">
+                                    <p>{{ $product->details }}</p>
+                                    <p class="text-right mr-3">&dollar; {{ $product->price }}</p>
                                 </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        {{ $products->links() }}
+                            </a>
+                        @endforeach
                     </div>
+                </div>
+                {{ $products->links() }}
+            </div>
+                
+            
                 </div>
             </div>
 
