@@ -21,8 +21,8 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="name" value="{{ $product->name }}">
-                            <input type="hidden" name="price" value="{{ $product->price }}">
-                            <a href="/category" class="btn btn-outline-secondary">Continue shopping</a>
+                            <input type="hidden" name="price" value="{{ $product->price }}">           
+                            <a href="/category" class="btn btn-outline-secondary">shopping</a>
                             <button type="submit" class="btn btn-outline-primary">Add to Cart</button>
                         </form>
                     </div>

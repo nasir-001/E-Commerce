@@ -16,5 +16,3 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::resource('/product', 'ProductController');
 
 Route::resource('/category', 'CategoriesController');
-
-// Route::post('/dashboard', 'CategoriesController@store')->name('dashboard.store');
