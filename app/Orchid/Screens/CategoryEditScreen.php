@@ -107,7 +107,7 @@ class CategoryEditScreen extends Screen
                     ->placeholder('Category slug')
                     ->help('Please enter a title name for this category'),
                 
-                Select::make('category.product.')
+                Select::make('product.')
                     ->title('choose a products')
                     ->placeholder('Search ...')
                     ->multiple()

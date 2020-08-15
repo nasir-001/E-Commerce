@@ -118,7 +118,7 @@ class ProductEditScreen extends Screen
                     ->type('number')
                     ->help('Enter the price for this product'),
 
-                Select::make('product.category')
+                Select::make('category')
                     ->title('choose category for this  product')
                     ->fromModel(Category::class, 'name'),
             ])
