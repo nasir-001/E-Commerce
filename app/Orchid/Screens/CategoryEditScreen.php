@@ -8,7 +8,6 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
-use Orhcid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
@@ -96,19 +95,19 @@ class CategoryEditScreen extends Screen
     {
         return [
             Layout::rows([
-                Input::make('name')
+                Input::make('category.name')
                     ->type('text')
                     ->title('Category Name')
                     ->placeholder('Enter category name')
                     ->help('Please enter a short and descriptive name for your customers'),
 
-                Input::make('slug')
+                Input::make('category.slug')
                     ->type('text')
                     ->title('Category Slug')
                     ->placeholder('Category slug')
                     ->help('Please enter a title name for this category'),
                 
-                Select::make('product.')
+                Select::make('category.product.')
                     ->title('choose a products')
                     ->placeholder('Search ...')
                     ->multiple()
@@ -127,7 +126,7 @@ class CategoryEditScreen extends Screen
 
     public function createOrUpdate(Category $category, Request $request, Product $product)
     {
-        $category->fill($request->all())->save();
+        $category->fill($request->get('category'))->save();
         $product = $request->get('product');
         $category->products()->attach($product);
         

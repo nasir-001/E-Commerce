@@ -7,6 +7,8 @@ use App\Category;
 use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\TextArea;
+use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Screen\Layout;
@@ -91,33 +93,32 @@ class ProductEditScreen extends Screen
     {
         return [
             Layout::rows([
-                Input::make('name')
+                Input::make('product.name')
                     ->title('Product Name')
                     ->placeholder('Enter name for your product')
                     ->help('Provide a short and descriptive name for the product'),
 
-                Input::make('slug')
-                    ->title('Product Slug')
-                    ->placeholder('Product slug')
+                Input::make('product.slug')
+                    ->title('Product title')
+                    ->placeholder('Product title')
                     ->help('Please enter a title name for this product'),
 
-                Input::make('details')
+                Input::make('product.details')
                     ->title('Product details')
                     ->placeholder('Product details')
                     ->help('Provide a details for this product'),
 
-                Input::make('description')
-                    ->title('Product description')
-                    ->placeholder('Product description')
-                    ->help('Please enter the description for this product'),
+                TextArea::make('product.description')
+                    ->placeholder('Enter the description for this product')
+                    ->title('Product desciption'),
 
-                Input::make('price')
+                Input::make('product.price')
                     ->title('Product price')
                     ->placeholder('Product price')
                     ->type('number')
                     ->help('Enter the price for this product'),
 
-                Select::make('category')
+                Select::make('product.category')
                     ->title('choose category for this  product')
                     ->fromModel(Category::class, 'name'),
             ])
@@ -132,7 +133,7 @@ class ProductEditScreen extends Screen
      */
     public function createOrUpdate(Product $product, Request $request)
     {   
-        $product->fill($request->all())->save();
+        $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);
 

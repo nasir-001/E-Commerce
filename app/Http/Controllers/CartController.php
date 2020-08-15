@@ -40,7 +40,7 @@ class CartController extends Controller
         $cartItem = Cart::add($request->id, $request->name, $request->price, 1);
         $cartContent = Cart::content();
         return view('pages.cart')->with([
-            'cartItem' => $request->cartItem,
+            'cartItem' => $cartItem,
             'cartContent' => $cartContent
             ]);
         
