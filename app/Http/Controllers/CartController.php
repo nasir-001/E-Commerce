@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use Darryldecode\Cart\CartCollection;
 class CartController extends Controller
 {
     /**
