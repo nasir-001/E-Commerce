@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use Darryldecode\Cart\CartCollection;
+use Cart;
 class CartController extends Controller
 {
     /**
@@ -14,10 +14,14 @@ class CartController extends Controller
      */
     public function index()
     {
-        $cartContent = Cart::content();
-        return view('pages.cart')->with('cartContent', $cartContent);
+        $cartCollection = Cart::getContent();
+        return view('pages.cart')->with('cartCollection', $cartCollection);
     }
-
+    
+    public function empty ()
+    {
+        Cart::clear();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +41,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
        
-        $cartItem = Cart::add($request->id, $request->name, $request->price, 1);
+        Cart::add($request->id, $request->name, $request->price, 1, array())->associate('App\Product');
         return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
         
     }
