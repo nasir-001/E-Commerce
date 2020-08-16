@@ -8,7 +8,7 @@ use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
 use Orchid\Screen\Screen;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Quill;
+use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Layout;
 use Orchid\Screen\Actions\Button;
@@ -79,7 +79,7 @@ class EmailSenderScreen extends Screen
                     ->help('Enter the users that you will like to send this message to.')
                     ->fromModel(User::class, 'name', 'email'),
 
-                Quill::make('content')
+                SimpleMDE::make('content')
                     ->title('Content')
                     ->required()
                     ->placeholder('Insert text here ...')

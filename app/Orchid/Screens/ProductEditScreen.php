@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
-use Orchid\Screen\Fields\Quill;
+use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Screen\Layout;
@@ -108,7 +108,7 @@ class ProductEditScreen extends Screen
                     ->placeholder('Product details')
                     ->help('Provide a details for this product'),
 
-                TextArea::make('product.description')
+                SimpleMDE::make('product.description')
                     ->placeholder('Enter the description for this product')
                     ->title('Product desciption'),
 
