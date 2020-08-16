@@ -18,7 +18,7 @@
             </li>
 
             <li class="nav-item active">
-              <a class="nav-link" href="">Logout <span class="fas fa-sign-out
+              <a class="nav-link" href="{{ route('logout') }}">Logout <span class="fas fa-sign-out
                 -alt"></span></a>
             </li>
             

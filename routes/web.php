@@ -9,6 +9,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('logout', 'Auth\LoginController@logout');
+
 Route::post('/cart', 'CartController@store')->name('cart.store');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
