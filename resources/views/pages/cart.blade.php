@@ -4,4 +4,3 @@
     {{ $product->quantity }}
     {{ $product->id }}
 @endforeach    
-
