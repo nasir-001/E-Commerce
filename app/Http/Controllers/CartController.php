@@ -39,15 +39,13 @@ class CartController extends Controller
     {
        
         $cartItem = Cart::add($request->id, $request->name, $request->price, 1);
-        $cartContent = Cart::content();
-        return view('pages.cart')->with([
-            'cartItem' => $cartItem,
-            'cartContent' => $cartContent
-            ]);
-        // return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
+        return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
         
     }
-
+    // return view('pages.cart')->with([
+    //     'cartItem' => $cartItem,
+    //     'cartContent' => $cartContent
+    // ]);
     
 
     /**

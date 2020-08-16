@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "melihovv/laravel-shopping-cart": "^7.0",
-        "orchid/platform": "^7.17"
+        "orchid/platform": "^7.17",
+        "santigarcor/laratrust": "^6.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
