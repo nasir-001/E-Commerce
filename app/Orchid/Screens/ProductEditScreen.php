@@ -142,9 +142,8 @@ class ProductEditScreen extends Screen
      */
     public function createOrUpdate(Product $product, Request $request)
     {   
-        // $file = new File($request->file('image'));
-        // // $attach = $file->load();
-        // dd($file);
+
+        
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);
