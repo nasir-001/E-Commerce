@@ -11,6 +11,7 @@ use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Upload;
+use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Map;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Actions\Button;
@@ -118,7 +119,16 @@ class ProductEditScreen extends Screen
                     ->title('Product desciption'),
 
                 Cropper::make('product.image')
-                    ->horizontal(),
+                    ->horizontal()
+                    ->title('Select first image for this product'),
+
+                Cropper::make('product.images')
+                    ->horizontal()
+                    ->title('optional image for this product'),
+                    
+                Cropper::make('product.images1')
+                    ->horizontal()
+                    ->title('Optional image for this product'),
 
                 Input::make('product.price')
                     ->title('Product price')
@@ -142,8 +152,6 @@ class ProductEditScreen extends Screen
      */
     public function createOrUpdate(Product $product, Request $request)
     {   
-
-        
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);

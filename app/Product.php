@@ -18,6 +18,8 @@ class Product extends Model
         'details',
         'description',
         'image',
+        'images',
+        'images1',
         'price'
     ];
 

@@ -38,6 +38,8 @@ class ProductListLayout extends Table
             TD::set('details', 'Details'),
             TD::set('description', 'Descriptions'),
             TD::set('image', 'Image'),
+            TD::set('images', 'Image 1'),
+            TD::set('images1', 'Image 2'),
             TD::set('created_at', 'Created'),
             TD::set('updated_at', 'Last edit'),
         ];
