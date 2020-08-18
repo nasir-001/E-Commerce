@@ -1,4 +1,4 @@
-@if (Cart::isEmpty() > 0)
+@if (Cart::isEmpty())
     <h1>No items</h1>
     @else
 

@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
+use Orchid\Screen\Fields\Picture;
+use Orchid\Screen\Fields\Cropper;
+use Orchid\Screen\Fields\Upload;
+use Orchid\Screen\Fields\Map;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Screen\Layout;
 use Orchid\Support\Facades\Alert;
+use Orchid\Attachment\File;
 
 class ProductEditScreen extends Screen
 {
@@ -112,6 +117,9 @@ class ProductEditScreen extends Screen
                     ->placeholder('Enter the description for this product')
                     ->title('Product desciption'),
 
+                Cropper::make('product.image')
+                    ->horizontal(),
+
                 Input::make('product.price')
                     ->title('Product price')
                     ->placeholder('Product price')
@@ -120,6 +128,7 @@ class ProductEditScreen extends Screen
 
                 Select::make('category')
                     ->title('choose category for this  product')
+                    ->multiple()
                     ->fromModel(Category::class, 'name'),
             ])
         ];
@@ -133,6 +142,9 @@ class ProductEditScreen extends Screen
      */
     public function createOrUpdate(Product $product, Request $request)
     {   
+        // $file = new File($request->file('image'));
+        // // $attach = $file->load();
+        // dd($file);
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);
