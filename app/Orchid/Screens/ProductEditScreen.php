@@ -152,6 +152,7 @@ class ProductEditScreen extends Screen
      */
     public function createOrUpdate(Product $product, Request $request)
     {   
+        // dd($request->all());
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);

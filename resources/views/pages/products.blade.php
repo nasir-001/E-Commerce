@@ -9,7 +9,8 @@
                 <div class="cols m-4 shadow-lg product product-box"> 
                     <a href="/product/{{ $product->id }}">
                         <h4 class="text-center">{{ $product->name }}</h4>
-                        <img class="m-auto" src="{{ asset('images/welcome2.jpg') }}" width="150px">
+                        {{-- <img src="{{ url('public/storage/2020/'.$product['image']) }}" /> --}}
+                        <img src="/sotrage/2020/08/18/{{ $product->image }}"/>
                         <br>
                         <small class="text-center">{{ $product->details }}</small>
                         <br>
