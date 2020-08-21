@@ -4,6 +4,10 @@
         <h1>No items</h1>
         @else
         {{-- {{ Cart::getCount() }} --}}
+        <form action="{{ route('cart.empty') }}" method="GET">
+            <button type="submit" class="btn btn-outline-danger mt-5 float-right mr-5">Clear Cart</button>
+        </form>
+        
         @foreach ($cartCollection as $product)
             <div class="container m-5">
                 <div class="card-body">
