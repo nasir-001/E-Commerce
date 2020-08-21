@@ -10,7 +10,7 @@
                     <a href="/product/{{ $product->id }}">
                         <h4 class="text-center">{{ $product->name }}</h4>
                         {{-- <img src="{{ url('public/storage/2020/'.$product['image']) }}" /> --}}
-                        <img src="/sotrage/2020/08/18/{{ $product->image }}"/>
+                        <img src="{{ $product['image']  }}" />
                         <br>
                         <small class="text-center">{{ $product->details }}</small>
                         <br>

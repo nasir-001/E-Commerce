@@ -8,6 +8,8 @@ use Orchid\Platform\Dashboard;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layout;
 use Orchid\Screen\Screen;
+use Orchid\Screen\Fields\Map;
+use Orchid\Screen\Fields\DateTimer;
 
 class PlatformScreen extends Screen
 {
@@ -57,7 +59,10 @@ class PlatformScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::view('platform::partials.welcome'),
+            Layout::rows([
+                Map::make('Map')
+                    ->title('Select coordinates'),
+            ])
         ];
     }
 }

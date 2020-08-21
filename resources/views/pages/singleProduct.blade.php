@@ -17,10 +17,13 @@
                         <h4 class="mt-4">{{ $product->details }}</h4>
                         <h2 class="mt-4">&dollar; {{ $product->price }}</h2>
                         <p>{{ $product->description }}</p>
+                        <p>&nbsp;</p>
+                        
                         <form action="{{ route('cart.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="details" value="{{ $product->details }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">           
                             <a href="/category" class="btn btn-outline-secondary">shopping</a>
                             <button type="submit" class="btn btn-outline-primary">Add to Cart</button>

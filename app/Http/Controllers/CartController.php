@@ -21,7 +21,9 @@ class CartController extends Controller
     public function empty ()
     {
         Cart::clear();
+        return redirect()->back()->with('success_message', 'Your cart is now empty');
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +44,7 @@ class CartController extends Controller
     {
        
         Cart::add($request->id, $request->name, $request->price, 1, array())->associate('App\Product');
-        return redirect()->route('cart.index')->with('message', 'Item was added to your cart!');
+        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
         
     }
     // return view('pages.cart')->with([
