@@ -26,7 +26,7 @@
                             <input type="hidden" name="details" value="{{ $product->details }}">
                             <input type="hidden" name="price" value="{{ $product->price }}">           
                             <a href="/category" class="btn btn-outline-secondary">shopping</a>
-                            <button type="submit" class="btn btn-outline-primary">Add to Cart</button>
+                            <button type="submit" class="btn btn-outline-success">Add to Cart</button>
                         </form>
                     </div>
 

@@ -31,12 +31,12 @@
                                         <button type="submit" class="btn btn-link mr-2" style="color: gray">Remove</button>
                                     </form>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="cols">
                                     <form action="">
                                         <input type="number" name="qty" class="form-control">
                                     </form>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     NGN {{ $product->price }}
                                 </div>
                             </div>
@@ -47,6 +47,7 @@
             </div>
             
         @endforeach
+        
         <div class="container m-5">
             <div class="card-body">
                 <div class="row">
@@ -59,11 +60,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="/category" class="btn btn-outline-secondary m-3">Continue Shopping</a>
+                        <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
                         <form action="" method="POST">
-                            <button type="submit" class="btn btn-outline-success m-3">Proceed to Checkout</button>
+                            <button type="submit" class="btn btn-outline-success mt-3">Proceed to Checkout</button>
                         </form>
                     </div>
                 </div>

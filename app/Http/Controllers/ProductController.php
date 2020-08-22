@@ -47,6 +47,7 @@ class ProductController extends Controller
     public function show(Product $product, Request $request)
     {
         $products = Product::find($product);
+    
         return view('pages.singleProduct')->with([
             'products' => $products
         ]);
