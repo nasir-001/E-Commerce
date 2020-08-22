@@ -21,6 +21,8 @@ Route::get('/empty', 'CartController@empty')->name('cart.empty');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 
+Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
+
 Route::resource('/product', 'ProductController');
 
 Route::resource('/category', 'CategoriesController');

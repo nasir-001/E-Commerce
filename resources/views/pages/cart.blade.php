@@ -9,6 +9,7 @@
     @else
         {{-- {{ Cart::getCount() }} --}}
         <form action="{{ route('cart.empty') }}" method="GET">
+            @csrf
             <button type="submit" class="btn btn-outline-danger mt-5 float-right mr-5">Clear Cart</button>
         </form>
         
@@ -27,7 +28,9 @@
                                     <p style="color: gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                                 <div class="cols">
-                                    <form action="" method="GET">
+                                    <form action="{{ route('cart.destroy', ['id' => $product->id]) }}" method="POST">
+                                        @method('delete')
+                                        @csrf
                                         <button type="submit" class="btn btn-link mr-2" style="color: gray">Remove</button>
                                     </form>
                                 </div>
@@ -47,7 +50,7 @@
             </div>
             
         @endforeach
-        
+
         <div class="container m-5">
             <div class="card-body">
                 <div class="row">

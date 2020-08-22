@@ -95,6 +95,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        // this is where remove one cart will be
+        Cart::remove($id);
+        return redirect()->back();
     }
 }
