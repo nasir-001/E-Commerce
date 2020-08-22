@@ -12,9 +12,13 @@
             @csrf
             <button type="submit" class="btn btn-outline-danger mt-5 float-right mr-5">Clear Cart</button>
         </form>
-        
+        <div class="container">
+            <div class="card-body">
+                <h2 class="mb-0">{{ $totalCount }} in item(s) in your cart</h2>
+            </div>
+        </div>  
         @foreach ($cartCollection as $product)
-            <div class="container m-5">
+            <div class="container mr-5 ml-5">
                 <div class="card-body mt-2">
                     <hr>
                     <div class="row">
