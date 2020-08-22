@@ -14,7 +14,7 @@
         </form>
         <div class="container">
             <div class="card-body">
-                <h2 class="mb-0">{{ $totalCount }} in item(s) in your cart</h2>
+                <h2 class="mb-0">{{ $cartCollection->count() }} item(s) in your cart</h2>
             </div>
         </div>  
         @foreach ($cartCollection as $product)
@@ -44,7 +44,7 @@
                                     </form>
                                 </div>
                                 <div class="col-md-2">
-                                    NGN {{ $product->price }}
+                                    NGN{{ $product->price }}
                                 </div>
                             </div>
                         </div>

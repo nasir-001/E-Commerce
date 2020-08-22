@@ -17,9 +17,7 @@ class CartController extends Controller
     {   
         $cartCollection = Cart::getContent();
         $totalPrice = Cart::getTotal();
-        $totalCount = Cart::getTotalQuantity();
         return view('pages.cart')->with([
-            'totalCount' =>  $totalCount,
             'cartCollection' => $cartCollection,
             'totalPrice' => $totalPrice
         ]);
