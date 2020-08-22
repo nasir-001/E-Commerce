@@ -58,7 +58,7 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem recusandae fugiat perspiciatis adipisci, vitae quia voluptatum itaque. Reiciendis, deserunt, fugiat quidem temporibus quam, eos distinctio ratione iusto aliquam officia inventore!
                     </div>
                     <div class="col-md-2">
-                        <strong class="mr-0"> Total NGN </strong> <strong class="">{{ $product->price }}</strong>
+                        <strong class="mr-0"> Total NGN </strong> <strong class="">{{ $totalPrice }}</strong>
                     </div>
                 </div>
                 <div class="row">

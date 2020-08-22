@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 use Cart;
 class CartController extends Controller
 {
@@ -13,9 +14,13 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $cartCollection = Cart::getContent();
-        return view('pages.cart')->with('cartCollection', $cartCollection);
+        $totalPrice = Cart::getTotal();
+        return view('pages.cart')->with([
+            'cartCollection' => $cartCollection,
+            'totalPrice' => $totalPrice
+        ]);
     }
     
     public function empty ()
