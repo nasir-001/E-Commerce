@@ -23,6 +23,8 @@ Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 
+Route::patch('/cart/{id}', 'CartController@update')->name('cart.update');
+
 Route::resource('/product', 'ProductController');
 
 Route::resource('/category', 'CategoriesController');

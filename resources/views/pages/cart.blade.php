@@ -8,7 +8,6 @@
             </div>
         </div>
     @else
-        {{-- {{ Cart::getCount() }} --}}
         <form action="{{ route('cart.empty') }}" method="GET">
             @csrf
             <button type="submit" class="btn btn-outline-danger mt-5 float-right mr-5">Clear Cart</button>
@@ -41,11 +40,15 @@
                                 </div>
                                 <div class="cols">
                                     <form action="">
-                                        <input type="number" name="quantity" class="form-control">
+                                        <select data-id="{{ $product->id }}" class="quantity form-control">
+                                            @for($i = 1; $i < 100 + 1; $i++)
+                                                <option {{ $item == $i ? 'selected' : '' }}>{{ $i }}</option>    
+                                            @endfor
+                                        </select>
                                     </form>
                                 </div>
                                 <div class="col-md-2">
-                                    NGN{{ $product->price }}
+                                    NGN {{ $product->price }}
                                 </div>
                             </div>
                         </div>
@@ -71,14 +74,36 @@
                         <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
-                        <form action="{{ route('cart.update') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-success mt-3">Proceed to Checkout</button>
-                        </form>
+                        <button type="submit" class="btn btn-outline-success mt-3">Proceed to Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
 
     @endif    
+
 @include('includes/footer')
+
+<script src="{{ asset('js/app.js') }}"></script>
+<script>
+    (function(){
+        const classname = document.querySelectorAll('.quantity')
+
+        Array.from(classname).forEach(function (element) {
+            element.addEventListener('change', function() {
+                const id = element.getAttribute('data-id')
+                axios.patch(`/cart/${id}`, {
+                    quantity: this.value
+                })
+                .then(function (response) {
+                    console.log(response);
+                    window.location.href = '{{ route('cart.index') }}'
+                })
+                .catch(function error(error) {
+                    console.log(error)
+                    window.location.href = '{{ route('cart.index') }}'
+                });
+            })
+        })
+    })();
+</script>

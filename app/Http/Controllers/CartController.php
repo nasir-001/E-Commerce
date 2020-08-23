@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Cart;
+use Illuminate\Support\Facades\Validator;
 class CartController extends Controller
 {
     /**
@@ -15,12 +16,14 @@ class CartController extends Controller
      */
     public function index()
     {   
-        // dd(Cart::getContent());
+        // dd(Cart::getTotalQuantity());
         $cartCollection = Cart::getContent();
         $totalPrice = Cart::getTotal();
+        $item = Cart::getTotalQuantity();
         return view('pages.cart')->with([
             'cartCollection' => $cartCollection,
-            'totalPrice' => $totalPrice
+            'totalPrice' => $totalPrice,
+            'item' => $item
         ]);
     }
     
@@ -89,10 +92,24 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
-        // Cart::update($id, array(
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required|numeric|between:1,100'
+        ]);
 
-        // ));
+        if ($validator->fails()) {
+            session()->flash('errors', collect(['Quantity must be between 1 and 100.']));
+            return response()->json(['success' => false], 400);
+        }
+
+        Cart::update($id, array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $request->quantity
+            )
+        ));
+
+        session()->flash('success_message', 'Quantity was updated successfully');
+        return response()->json(['success' => true]);
     }
 
     /**
@@ -106,4 +123,12 @@ class CartController extends Controller
         Cart::remove($id);
         return redirect()->back();
     }
+
+     /**
+     * Switch item for shopping cart to save for later.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+   
 }
