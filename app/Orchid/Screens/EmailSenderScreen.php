@@ -28,7 +28,7 @@ class EmailSenderScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Tool that sends ad-hoc email messages';
+    public $description = 'Send email to your customers';
 
     /**
      * Query data.

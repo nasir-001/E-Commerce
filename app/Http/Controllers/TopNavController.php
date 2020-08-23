@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use Illuminate\Support\Facades\Auth;
 use Cart;
-class CartController extends Controller
+
+class TopNavController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +13,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        // dd(Cart::getContent());
-        $cartCollection = Cart::getContent();
-        $totalPrice = Cart::getTotal();
-        return view('pages.cart')->with([
-            'cartCollection' => $cartCollection,
-            'totalPrice' => $totalPrice
-        ]);
-    }
-    
-    public function empty ()
     {
-        Cart::clear();
-        return redirect()->back()->with('success_message', 'Your cart is now empty');
+        $cartCollection = Cart::getContent();
+        return view('includes.topnav')->with('cartCollection', $cartCollection);
     }
 
     /**
@@ -37,7 +25,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -48,14 +36,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $productId = $request->id;
-        $duplicates = Cart::get($productId);
-        if ($duplicates) {
-            return redirect()->back()->with('success_message', 'Item is already in your cart');
-        }
-        Cart::add($request->id, $request->name, $request->price, 1, array())->associate('App\Product');
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
-        
+        //
     }
 
     /**
@@ -89,10 +70,7 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
-        // Cart::update($id, array(
-
-        // ));
+        //
     }
 
     /**
@@ -103,7 +81,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-        return redirect()->back();
+        //
     }
 }

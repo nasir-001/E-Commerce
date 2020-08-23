@@ -5,10 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WelcomePageController@index')->name('welcome');
 
-// Route::get('empty', function () {
-//     Cart::clear();
-// });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -20,6 +16,10 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::get('/empty', 'CartController@empty')->name('cart.empty');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
+
+Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
+
+// Route::get('/category', 'TopNavController@index')->name('topnav.index');
 
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 

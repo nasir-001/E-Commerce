@@ -13,9 +13,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="/category">Home <span class="fas fa-home"></span></a>
             </li>
-            <li class="nav-item active">
-              <a style="backgorund-color: red" class="nav-link" href="{{ route('cart.index') }}"><small><strong>{{ $cartCollection->count() }}</strong></small>
-                Cart <span class="fas fa-shopping-cart"></span></a>
+            <li class="nav-item active">  
+              <a class="nav-link" href="{{ route('cart.index') }}">Cart <span class="fas fa-shopping-cart"></span></a>
+              {{-- <small><strong>{{ $cartCollection->count() }}</strong></small> --}}
             </li>
 
             <li class="nav-item active">

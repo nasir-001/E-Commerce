@@ -4,6 +4,7 @@
         <div class="container">
             <div class="card-body">
                 <h1>No items in your cart</h1>
+                <a href="/category" class="btn btn-outline-info">Continue Shopping</a>
             </div>
         </div>
     @else
@@ -40,7 +41,7 @@
                                 </div>
                                 <div class="cols">
                                     <form action="">
-                                        <input type="number" name="qty" class="form-control">
+                                        <input type="number" name="quantity" class="form-control">
                                     </form>
                                 </div>
                                 <div class="col-md-2">
@@ -70,7 +71,8 @@
                         <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
-                        <form action="" method="POST">
+                        <form action="{{ route('cart.update') }}" method="POST">
+                            @csrf
                             <button type="submit" class="btn btn-outline-success mt-3">Proceed to Checkout</button>
                         </form>
                     </div>
