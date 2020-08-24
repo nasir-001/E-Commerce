@@ -19,7 +19,7 @@
         </div>  
         @foreach ($cartCollection as $product)
             <div class="container mr-5 ml-5">
-                <div class="card-body mt-2">
+                <div class="card-body">
                     <hr>
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
@@ -41,7 +41,7 @@
                                 <div class="cols">
                                     <form action="">
                                         <select data-id="{{ $product->id }}" class="quantity form-control">
-                                            @for($i = 1; $i < 100 + 1; $i++)
+                                            @for($i = 1; $i < 1000 + 1; $i++)
                                                 <option {{ $product->quantity == $i ? 'selected' : '' }}>{{ $i }}</option>    
                                             @endfor
                                         </select>
@@ -74,7 +74,7 @@
                         <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-outline-success mt-3">Proceed to Checkout</button>
+                        <a href="{{ route('checkout.index') }}" class="btn btn-outline-success mt-3">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>
