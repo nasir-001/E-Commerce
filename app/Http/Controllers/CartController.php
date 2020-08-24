@@ -13,17 +13,16 @@ class CartController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
      */
-    public function index()
+    public function index(Request  $request)
     {   
-        // dd(Cart::getTotalQuantity());
         $cartCollection = Cart::getContent();
+        // dd($cartCollection);
         $totalPrice = Cart::getTotal();
-        $item = Cart::getTotalQuantity();
         return view('pages.cart')->with([
             'cartCollection' => $cartCollection,
             'totalPrice' => $totalPrice,
-            'item' => $item
         ]);
     }
     

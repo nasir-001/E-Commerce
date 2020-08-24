@@ -42,7 +42,7 @@
                                     <form action="">
                                         <select data-id="{{ $product->id }}" class="quantity form-control">
                                             @for($i = 1; $i < 100 + 1; $i++)
-                                                <option {{ $item == $i ? 'selected' : '' }}>{{ $i }}</option>    
+                                                <option {{ $product->quantity == $i ? 'selected' : '' }}>{{ $i }}</option>    
                                             @endfor
                                         </select>
                                     </form>
