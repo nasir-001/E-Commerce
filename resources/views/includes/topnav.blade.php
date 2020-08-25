@@ -13,6 +13,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="/category">Home <span class="fas fa-home"></span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="">Wallet <span class="fas fa-wallet"></span></a>
+            </li>
             <li class="nav-item active">  
               <a class="nav-link" href="{{ route('cart.index') }}">Cart <span class="fas fa-shopping-cart"></span>
                 @if(Cart::getContent()->count() > 0)

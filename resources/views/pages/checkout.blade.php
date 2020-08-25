@@ -47,6 +47,7 @@
                         </div>
                     </div>
                     <h4 class="mt-3 mb-3"><strong>Payments Details</strong></h4>
+                    
                 </form>
             </div>
             <div class="col-md-5">
