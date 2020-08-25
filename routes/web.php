@@ -19,8 +19,6 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 
 Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
-// Route::get('/category', 'TopNavController@index')->name('topnav.index');
-
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');

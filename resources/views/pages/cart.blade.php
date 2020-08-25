@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <h5 class="ml-3" style="color: gray">{{ $product->name }}</h5>
-                                    <p style="color: gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <p style="color: gray">{{ $product->model->details }}</p>
                                 </div>
                                 <div class="cols">
                                     <form action="{{ route('cart.destroy', ['id' => $product->id]) }}" method="POST">
@@ -41,19 +41,18 @@
                                 <div class="cols">
                                     <form action="">
                                         <select data-id="{{ $product->id }}" class="quantity form-control">
-                                            @for($i = 1; $i < 1000 + 1; $i++)
+                                            @for($i = 1; $i < 100 + 1; $i++)
                                                 <option {{ $product->quantity == $i ? 'selected' : '' }}>{{ $i }}</option>    
                                             @endfor
                                         </select>
                                     </form>
                                 </div>
                                 <div class="col-md-2">
-                                    NGN {{ $product->price }}
+                                    NGN {{ $product->price * $product->quantity}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <hr>
                 </div>
             </div>
             
