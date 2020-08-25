@@ -14,7 +14,11 @@
               <a class="nav-link" href="/category">Home <span class="fas fa-home"></span></a>
             </li>
             <li class="nav-item active">  
-              <a class="nav-link" href="{{ route('cart.index') }}">Cart <span class="fas fa-shopping-cart"></span> <span class="ml-1" style="border-radius: 50%; background-color: rgb(144, 144, 158); color: black">{{ Cart::getContent()->count() }}</span></a>
+              <a class="nav-link" href="{{ route('cart.index') }}">Cart <span class="fas fa-shopping-cart"></span>
+                @if(Cart::getContent()->count() > 0)
+                	<span>{{ Cart::getContent()->count() }}</span>
+                @endif
+              </a>
             </li>
 
             <li class="nav-item active">

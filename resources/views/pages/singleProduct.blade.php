@@ -15,7 +15,7 @@
                     <div class="col ml-5">
                         <h2>{{ $product->name }}</h2>
                         <h4 class="mt-4">{{ $product->details }}</h4>
-                        <h2 class="mt-4">&dollar; {{ $product->price }}</h2>
+                        <h2 class="mt-4">NGN {{ $product->price }}</h2>
                         <p>{{ $product->description }}</p>
                         <p>&nbsp;</p>
                         
