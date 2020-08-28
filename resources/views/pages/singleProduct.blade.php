@@ -2,7 +2,13 @@
 
 @section('title', '| Products')
 @section('content')
-
+<div class="container mt-5">
+    @if(session()->has('success_message'))
+        <div class="alert alert-success">
+            {{ session()->get('success_message') }}
+        </div>
+    @endif
+</div>
     @foreach ($products as $product)
         <div class="container justify-content-center mt-5">
                 <div class="row mb-5">

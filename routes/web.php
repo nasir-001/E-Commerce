@@ -19,7 +19,9 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 
 Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 

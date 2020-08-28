@@ -8,26 +8,41 @@
             </div>
         </div>
     @else
+    
         <form action="{{ route('cart.empty') }}" method="GET">
             @csrf
+            <div class="container">
+                @if(session()->has('empty_message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('empty_message') }}
+                    </div>
+                @endif
+            </div>
             <button type="submit" class="btn btn-outline-danger mt-5 float-right mr-5">Clear Cart</button>
         </form>
         <div class="container">
             <div class="card-body">
                 <h2 class="mb-0">{{ $cartCollection->count() }} item(s) in your cart</h2>
             </div>
-        </div>  
-        @foreach ($cartCollection as $product)
+        </div>
+        <div class="container">
+            @if(session()->has('success_message'))
+                <div class="alert alert-success">
+                    {{ session()->get('success_message') }}
+                </div>
+            @endif
+        </div>
+        @foreach ($cartCollection as $product)  
             <div class="container mr-5 ml-5">
-                <div class="card-body">
-                    <hr>
+                <div class="card-body">  
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
+                            <hr>
                             <div class="row">
                                 <div class="cols">
                                     <img src="{{ asset('images/welcome2.jpg') }}" width="80">
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <h5 class="ml-3" style="color: gray">{{ $product->name }}</h5>
                                     <p style="color: gray">{{ $product->model->details }}</p>
                                 </div>
@@ -73,7 +88,7 @@
                         <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
-                        <a href="{{ route('checkout.index') }}" class="btn btn-outline-success mt-3">Proceed to Checkout</a>
+                        <a href="{{ route('pay') }}" class="btn btn-outline-success mt-3">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>
@@ -95,11 +110,11 @@
                     quantity: this.value
                 })
                 .then(function (response) {
-                    console.log(response);
+                    // console.log(response);
                     window.location.href = '{{ route('cart.index') }}'
                 })
                 .catch(function error(error) {
-                    console.log(error)
+                    // console.log(error)
                     window.location.href = '{{ route('cart.index') }}'
                 });
             })

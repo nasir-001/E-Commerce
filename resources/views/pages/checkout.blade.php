@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" placeholder="Residential Address" class="form-control">
+                        <input type="text" placeholder="Delivery Address" class="form-control">
                     </div>
                     <div class="row">
                         <div class="col">
@@ -46,9 +46,9 @@
                             </div>
                         </div>
                     </div>
-                    <h4 class="mt-3 mb-3"><strong>Payments Details</strong></h4>
-                    
                 </form>
+                <h4 class="mt-3 mb-3"><strong>Payments Details</strong></h4>
+                
             </div>
             <div class="col-md-5">
                 <h4><strong>Your Order</strong></h4>
