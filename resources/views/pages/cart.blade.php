@@ -88,7 +88,7 @@
                         <a href="/category" class="btn btn-outline-secondary mt-3">Continue Shopping</a>
                     </div>
                     <div class="col">
-                        <a href="{{ route('pay') }}" class="btn btn-outline-success mt-3">Proceed to Checkout</a>
+                        <a href="{{ route('checkout.index') }}" class="btn btn-outline-success mt-3">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>

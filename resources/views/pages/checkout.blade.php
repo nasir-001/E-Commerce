@@ -48,7 +48,10 @@
                     </div>
                 </form>
                 <h4 class="mt-3 mb-3"><strong>Payments Details</strong></h4>
-                
+                <form>
+                    <script src="https://api.payant.ng/assets/js/inline.min.js"></script>
+                    <button class="btn btn-success" type="button" onclick="payWithPayant()"> Pay </button> 
+                </form>
             </div>
             <div class="col-md-5">
                 <h4><strong>Your Order</strong></h4>
