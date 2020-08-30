@@ -5,18 +5,30 @@
         <div class="row">
             <div class="col">
                 <h4 class="mb-4 mt-2"><strong>Billing Details</strong></h4>
-                <form action="">
+                <form method="POST" action="{{ route('pay') }}">
+                    @csrf
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" placeholder="Email address" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" placeholder="Name" class="form-control">
+                        <input type="email" placeholder="Email address" name="email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
                         <input type="text" placeholder="Delivery Address" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input type="text" placeholder="First Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="second_name">Second Name</label>
+                                <input type="text" placeholder="Second Name" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -46,11 +58,18 @@
                             </div>
                         </div>
                     </div>
-                </form>
-                <h4 class="mt-3 mb-3"><strong>Payments Details</strong></h4>
-                <form>
-                    <script src="https://api.payant.ng/assets/js/inline.min.js"></script>
-                    <button class="btn btn-success" type="button" onclick="payWithPayant()"> Pay </button> 
+                    {{-- Hidden fields --}}
+                    <input type="hidden" name="amount" value="{{ Cart::getTotal() }}" /> <!-- Replace the value with your transaction amount -->
+                    <input type="hidden" name="email" value="test@test.com" /> <!-- Replace the value with your customer email -->
+                    <input type="hidden" name="address" value="No. Example" />
+                    <input type="hidden" name="city" value="City" />
+                    <input type="hidden" name="town" value="town" />
+                    <input type="hidden" name="currency" value="NGN" />
+                    <input type="hidden" name="country" value="NG" />
+                    <input type="hidden" name="firstname" value="Oluwole" /> <!-- Replace the value with your customer firstname -->
+                    <input type="hidden" name="lastname" value="Adebiyi" /> <!-- Replace the value with your customer lastname -->
+                    <input type="hidden" name="phonenumber" value="090929992892" /> <!-- Replace the value with your customer phonenumber -->
+                    <input class="btn btn-success" type="submit" value="Proceed to buy"  />
                 </form>
             </div>
             <div class="col-md-5">
@@ -67,7 +86,7 @@
                             <p class="ml-3">{{ $product->model->details }}</p>
                             <h5 class="ml-3">NGN {{ $product->price * $product->quantity }}</h5>
                         </div>
-                        <strong class="mr-2 mt-3" style="width: 20px; height: 25px; border: 1px solid gray">{{ $product->quantity }}</strong>
+                        <strong class="mr-2 mt-3" style="width: 30px; height: 25px; border: 1px solid gray">{{ $product->quantity }}</strong>
                     </div>
                 </div>
                 @endforeach

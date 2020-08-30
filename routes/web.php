@@ -28,3 +28,8 @@ Route::patch('/cart/{id}', 'CartController@update')->name('cart.update');
 Route::resource('/product', 'ProductController');
 
 Route::resource('/category', 'CategoriesController');
+
+// Gateway
+Route::post('/pay', 'RaveController@initialize')->name('pay');
+
+Route::post('/rave/callback', 'RaveController@callback')->name('callback');
