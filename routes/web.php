@@ -32,4 +32,4 @@ Route::resource('/category', 'CategoriesController');
 // Gateway
 Route::post('/pay', 'RaveController@initialize')->name('pay');
 
-Route::post('/rave/callback', 'RaveController@callback')->name('callback');
+Route::get('/rave/callback', 'RaveController@callback')->name('callback');

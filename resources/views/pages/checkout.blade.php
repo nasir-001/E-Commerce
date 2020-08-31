@@ -59,8 +59,8 @@
                         </div>
                     </div>
                     {{-- Hidden fields --}}
-                    <input type="hidden" name="amount" value="{{ Cart::getTotal() }}" /> <!-- Replace the value with your transaction amount -->
-                    <input type="hidden" name="email" value="test@test.com" /> <!-- Replace the value with your customer email -->
+                    <input type="hidden" name="amount" value="200" /> <!-- Replace the value with your transaction amount -->
+                    <input type="hidden" name="email" value="nasirlawal001@gmail.com" /> <!-- Replace the value with your customer email -->
                     <input type="hidden" name="address" value="No. Example" />
                     <input type="hidden" name="city" value="City" />
                     <input type="hidden" name="town" value="town" />
