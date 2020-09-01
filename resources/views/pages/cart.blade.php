@@ -34,7 +34,7 @@
         </div>
         @foreach ($cartCollection as $product)  
             <div class="container mr-5 ml-5">
-                <div class="card-body">  
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <hr>
@@ -42,18 +42,18 @@
                                 <div class="cols">
                                     <img src="{{ asset('images/welcome2.jpg') }}" width="80">
                                 </div>
-                                <div class="col-md-4">
-                                    <h5 class="ml-3" style="color: gray">{{ $product->name }}</h5>
+                                <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
+                                    <h5 style="color: gray">{{ $product->name }}</h5>
                                     <p style="color: gray">{{ $product->model->details }}</p>
                                 </div>
-                                <div class="cols">
+                                <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
                                     <form action="{{ route('cart.destroy', ['id' => $product->id]) }}" method="POST">
                                         @method('delete')
                                         @csrf
-                                        <button type="submit" class="btn btn-link mr-2" style="color: gray">Remove</button>
+                                        <button type="submit" class="btn btn-link mr-2" style="color: red">Remove</button>
                                     </form>
                                 </div>
-                                <div class="cols">
+                                <div class="cols mt-3">
                                     <form action="">
                                         <select data-id="{{ $product->id }}" class="quantity form-control">
                                             @for($i = 1; $i < 100 + 1; $i++)
@@ -62,7 +62,7 @@
                                         </select>
                                     </form>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3 col-sm-3 col-xl-3 mt-3">
                                     NGN {{ $product->price * $product->quantity}}
                                 </div>
                             </div>
@@ -110,11 +110,9 @@
                     quantity: this.value
                 })
                 .then(function (response) {
-                    // console.log(response);
                     window.location.href = '{{ route('cart.index') }}'
                 })
                 .catch(function error(error) {
-                    // console.log(error)
                     window.location.href = '{{ route('cart.index') }}'
                 });
             })
