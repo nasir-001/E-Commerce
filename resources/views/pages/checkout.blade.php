@@ -79,11 +79,15 @@
                 <div class="col">
                     <div class="row">
                         <div class="cols">
-                            <img src="{{ asset('images/welcome2.jpg') }}" width="70">
+                            <a href="/product/{{ $product->id }}">
+                                <img src="{{ asset('images/welcome2.jpg') }}" width="70">
+                            </a>
                         </div>
                         <div class="col">
-                            <h5 style="display: inline; color: gray" class="ml-3 mt-0">{{ $product->name }}</h5>
-                            <p class="ml-3">{{ $product->model->details }}</p>
+                            <a href="/product/{{ $product->id }}">
+                                <h5 style="display: inline; color: gray" class="ml-3 mt-0">{{ $product->name }}</h5>
+                                <p class="ml-3">{{ $product->model->details }}</p>
+                            </a>
                             <h5 class="ml-3">NGN {{ $product->price * $product->quantity }}</h5>
                         </div>
                         <strong class="mr-2 mt-3" style="width: 30px; height: 25px; border: 1px solid gray">{{ $product->quantity }}</strong>

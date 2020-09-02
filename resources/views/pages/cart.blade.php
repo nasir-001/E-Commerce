@@ -40,11 +40,15 @@
                             <hr>
                             <div class="row">
                                 <div class="cols">
-                                    <img src="{{ asset('images/welcome2.jpg') }}" width="80">
+                                    <a href="/product/{{ $product->id }}">
+                                        <img src="{{ asset('images/welcome2.jpg') }}" width="80">
+                                    </a>
                                 </div>
                                 <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
-                                    <h5 style="color: gray">{{ $product->name }}</h5>
-                                    <p style="color: gray">{{ $product->model->details }}</p>
+                                    <a href="/product/{{ $product->id }}">
+                                        <h5 style="color: gray">{{ $product->name }}</h5>
+                                        <p style="color: gray">{{ $product->model->details }}</p>
+                                    </a>
                                 </div>
                                 <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
                                     <form action="{{ route('cart.destroy', ['id' => $product->id]) }}" method="POST">

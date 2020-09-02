@@ -14,7 +14,7 @@
                         <br>
                         <small class="text-center">{{ $product->details }}</small>
                         <br>
-                        <h6 class="float-right mr-1">&dollar; {{ $product->price }}</h6>
+                        <h6 class="float-right mr-1">NGN {{ $product->price }}</h6>
                     </a>
                 </div>
             @endforeach   
