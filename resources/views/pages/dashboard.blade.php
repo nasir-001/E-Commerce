@@ -1,18 +1,25 @@
 @extends('layouts/default')
 
 @section('title', '| Dashboard')
-
+<style>
+    .box {
+        max-width: 150px;
+    }
+</style>
 @section('content')
-        <div class="row mt-5 m-5">
+        <div class="row m-5">
             @foreach ($products as $product)
-                <div class="cols m-4 shadow-lg product"> 
-                    <a href="/product/{{ $product->id }}">
-                        <h4 class="text-center">{{ $product->name }}</h4>
-                        <img src="{{ asset('images/welcome2.jpg') }}" width="150px">
-                        <br>
-                        <small>{{ $product->details }}</small><br>
-                        <h6 class="float-right mr-1">NGN {{ $product->price }}</h6>
-                    </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6"> 
+                    <h4>{{ $product->name }}</h4>
+                    <div class="well">
+                        <a href="/product/{{ $product->id }}">
+                            <div class="box">
+                                <img class="shadow-lg" style="border: 3px solid lightgray" src="{{ asset('images/welcome2.jpg') }}" width="150px"><br>
+                                {{ $product->details }}
+                                <h5 class="mb-5" style="color: black; background: lightgray; width: 100px">NGN {{ $product->price }}</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             @endforeach
         </div>

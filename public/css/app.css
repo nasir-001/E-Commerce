@@ -10951,7 +10951,7 @@ body {
 }
 
 p {
-  color: chocolate;
+  color: lightgray;
   font-family: sans-serif;
   font-size: 1.1em;
   font-weight: 300;
@@ -10968,7 +10968,7 @@ p {
 }
 
 a {
-  color: chocolate;
+  color: lightgray;
 }
 
 a:hover {
@@ -10994,10 +10994,6 @@ a:hover {
 }
 
 @media screen and (max-width: 710px) {
-  img {
-    width: 120px;
-  }
-
   .sidenav h3 {
     font-size: 1em;
   }
@@ -11012,12 +11008,6 @@ a:hover {
 
   #sidebar a {
     font-size: 0.2;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  img {
-    width: 80px;
   }
 }
 

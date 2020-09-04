@@ -104,7 +104,7 @@
                                     <h4 class="text-center">{{ $product->name }}</h4>
                                     <img class="shadow-lg" src="{{ asset('images/welcome2.jpg') }}">
                                     <p>{{ $product->details }}</p>
-                                    <p class="text-right mr-3">&dollar; {{ $product->price }}</p>
+                                    <p class="text-right mr-3">NGN {{ $product->price }}</p>
                                 </div>
                             </a>
                         @endforeach

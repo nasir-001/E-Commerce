@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        $products = Product::inRandomOrder()->paginate(10);
+        $products = Product::inRandomOrder()->paginate(12);
         $categories = Category::all();
         
         return view('pages.dashboard')->with([
