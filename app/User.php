@@ -71,4 +71,9 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

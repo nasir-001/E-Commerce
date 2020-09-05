@@ -108,7 +108,7 @@
                         <h5>Tax</h5>
                     </div>
                     <div class="col">
-                        <h5>0%</h5>
+                        <h5>0.14%</h5>
                     </div>
                 </div>
                 <div class="row">

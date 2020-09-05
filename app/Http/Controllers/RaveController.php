@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Order;
+use App\OrderProduct;
+use Cart;
 use Rave;
 
 class RaveController extends Controller
@@ -30,6 +33,33 @@ class RaveController extends Controller
   {
 
     $data = Rave::verifyTransaction(request()->txref);
+
+    // Insert into orders table 
+    $order = Order::Create([
+      'user_id' => auth()->user() ? auth()->user()->id : null,
+      'billing_first_name' => $request->first_name,
+      'billing_last_name' => $request->second_name,
+      'billing_email' => $request->billing_email,
+      'billing_address' => $request->address,
+      'billing_city' => $request->city,
+      'billing_town' => $request->town,
+      'billing_postalcode' => $request->postalcode,
+      'billing_phone' => $request->phone,
+      'billing_total' => Cart::getTotal(),
+      'error' => null,
+
+    ]);
+
+    foreach (Cart::getContent() as $item) 
+    {
+      OrderProduct::create([
+        'order_id' => $order_id,
+        'product_id' => $item_id,
+        'quantity' => $item->quantity,
+      ]);
+    }
+
+    // Insert into order_product table
 
     dd($data);
         // Get the transaction from your DB using the transaction reference (txref)

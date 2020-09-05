@@ -80,3 +80,8 @@ Breadcrumbs::for('platform.product.list', function($trail) {
     $trail->parent('platform.index');
     $trail->push('Create products');
 });
+
+Breadcrumbs::for('platform.order.list', function($trail) {
+    $trail->parent('platform.index');
+    $trail->push('All Orders');
+});

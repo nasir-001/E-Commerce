@@ -93,6 +93,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('icon-modules')
                 ->route('platform.product.list'),
 
+            ItemMenu::label('View all orders')
+                ->icon('icon-book-open')
+                ->title('Manage Orders')
+                ->route('platform.order.list'),
+
             ItemMenu::label('Email sender')
                 ->icon('icon-envelope-letter')
                 ->route('platform.email')
