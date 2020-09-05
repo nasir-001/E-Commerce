@@ -68,7 +68,7 @@ Breadcrumbs::for('platform.category.edit', function ($trail) {
 
 Breadcrumbs::for('platform.category.list', function ($trail) {
     $trail->parent('platform.index');
-    $trail->push('Create categories');
+    $trail->push('All categories');
 });
 
 Breadcrumbs::for('platform.product.edit', function($trail) {
@@ -78,7 +78,7 @@ Breadcrumbs::for('platform.product.edit', function($trail) {
 
 Breadcrumbs::for('platform.product.list', function($trail) {
     $trail->parent('platform.index');
-    $trail->push('Create products');
+    $trail->push('All products');
 });
 
 Breadcrumbs::for('platform.order.list', function($trail) {

@@ -78,7 +78,7 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Create category')
                 ->icon('icon-layers')
                 ->route('platform.category.edit')
-                ->title('Category'),
+                ->title('Manage Categories'),
             
             ItemMenu::label('View categories')
                 ->icon('icon-dropbox')
@@ -87,14 +87,14 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('Create product')
                 ->icon('icon-module')
                 ->route('platform.product.edit')
-                ->title('Product'),
+                ->title('Manage Products'),
 
             ItemMenu::label('View products')
                 ->icon('icon-modules')
                 ->route('platform.product.list'),
 
             ItemMenu::label('View all orders')
-                ->icon('icon-book-open')
+                ->icon('icon-briefcase')
                 ->title('Manage Orders')
                 ->route('platform.order.list'),
 

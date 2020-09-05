@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Cart;
 class CheckoutController extends Controller
 {
     /**
@@ -13,7 +13,10 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('pages.checkout');
+        $total = Cart::getTotal();
+        return view('pages.checkout')->with([
+            'total' => $total
+        ]);
     }
 
     /**

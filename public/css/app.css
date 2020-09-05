@@ -10968,10 +10968,10 @@ p {
 }
 
 a {
-  color: lightgray;
+  color: gray;
 }
 
 a:hover {
-  color: chocolate;
+  color: black;
 }
 

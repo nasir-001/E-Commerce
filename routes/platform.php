@@ -59,6 +59,7 @@ Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('pla
 //Route::screen('idea', 'Idea::class','platform.screens.idea');
 
                  // My Routes
+                 
 // Email Sender Route
 Route::screen('email', EmailSenderScreen::class)->name('platform.email');
 

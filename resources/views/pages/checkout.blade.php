@@ -1,3 +1,4 @@
+<script src="{{ asset('js/app.js') }}" defer></script>
 @include('includes/topnav')
 
     <div class="container">
@@ -10,23 +11,23 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" placeholder="Email address" name="email" class="form-control">
+                        <input type="email" placeholder="Email address" name="email" value="{{ auth()->user()->email }}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" placeholder="Delivery Address" class="form-control">
+                        <input type="text" placeholder="Delivery Address" name="address" class="form-control" required>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label for="first_name">First Name</label>
-                                <input type="text" placeholder="First Name" class="form-control">
+                                <input type="text" placeholder="First Name" name="first_name" class="form-control" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="second_name">Second Name</label>
-                                <input type="text" placeholder="Second Name" class="form-control">
+                                <input type="text" placeholder="Second Name" name="last_name" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -34,13 +35,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="city">City</label>
-                                <input type="text" placeholder="City" class="form-control">
+                                <input type="text" placeholder="City" name="city" class="form-control" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="town">Town</label>
-                                <input type="text" placeholder="Town" class="form-control">
+                                <input type="text" placeholder="Town" name="town" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -48,27 +49,20 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="code">Postal\Zip Code</label>
-                                <input type="text" placeholder="Postal or zip code" class="form-control">
+                                <input type="text" placeholder="Postal or zip code" name="postalcode" class="form-control" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" placeholder="Phone number" class="form-control">
+                                <input type="text" placeholder="Phone number" name="phone" class="form-control" required>
                             </div>
                         </div>
                     </div>
                     {{-- Hidden fields --}}
-                    <input type="hidden" name="amount" value="200" /> <!-- Replace the value with your transaction amount -->
-                    <input type="hidden" name="email" value="nasirlawal001@gmail.com" /> <!-- Replace the value with your customer email -->
-                    <input type="hidden" name="address" value="No. Example" />
-                    <input type="hidden" name="city" value="City" />
-                    <input type="hidden" name="town" value="town" />
                     <input type="hidden" name="currency" value="NGN" />
                     <input type="hidden" name="country" value="NG" />
-                    <input type="hidden" name="firstname" value="Oluwole" /> <!-- Replace the value with your customer firstname -->
-                    <input type="hidden" name="lastname" value="Adebiyi" /> <!-- Replace the value with your customer lastname -->
-                    <input type="hidden" name="phonenumber" value="090929992892" /> <!-- Replace the value with your customer phonenumber -->
+                    <input type="hidden" name="amount" value="{{ $total }}" /> <!-- Replace the value with your transaction amount -->
                     <input class="btn btn-success" type="submit" value="Proceed to buy"  />
                 </form>
             </div>
@@ -123,4 +117,3 @@
         </div>
     </div>
 @include('includes/footer')
-

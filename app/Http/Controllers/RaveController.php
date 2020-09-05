@@ -21,25 +21,32 @@ class RaveController extends Controller
   {
     //This initializes payment and redirects to the payment gateway
     //The initialize method takes the parameter of the redirect URL
-    
+    // dd($request->all());
     Rave::initialize(route('callback'));
   }
 
   /**
    * Obtain Rave callback information
+   * Display a listing of the resource.
+   * @param Illuminate\Http\Request  $request
    * @return void
    */
-  public function callback()
+  public function callback(Request  $request)
   {
 
-    $data = Rave::verifyTransaction(request()->txref);
+    // $data = Rave::verifyTransaction(request()->txref);
 
+    $resp = $request->resp;
+    $body = json_decode($resp, true);
+    $txRef = $body['data']['data']['txRef'];
+    $data = Rave::verifyTransaction($txRef);
+    
     // Insert into orders table 
-    $order = Order::Create([
+    $order = Order::create([
       'user_id' => auth()->user() ? auth()->user()->id : null,
+      'billing_email' => $request->email,
       'billing_first_name' => $request->first_name,
-      'billing_last_name' => $request->second_name,
-      'billing_email' => $request->billing_email,
+      'billing_last_name' => $request->last_name,
       'billing_address' => $request->address,
       'billing_city' => $request->city,
       'billing_town' => $request->town,
@@ -53,25 +60,11 @@ class RaveController extends Controller
     foreach (Cart::getContent() as $item) 
     {
       OrderProduct::create([
-        'order_id' => $order_id,
-        'product_id' => $item_id,
+        'order_id' => $order->id,
+        'product_id' => $item->model->id,
         'quantity' => $item->quantity,
       ]);
     }
-
-    // Insert into order_product table
-
-    dd($data);
-        // Get the transaction from your DB using the transaction reference (txref)
-        // Check if you have previously given value for the transaction. If you have, redirect to your successpage else, continue
-        // Comfirm that the transaction is successful
-        // Confirm that the chargecode is 00 or 0
-        // Confirm that the currency on your db transaction is equal to the returned currency
-        // Confirm that the db transaction amount is equal to the returned amount
-        // Update the db transaction record (includeing parameters that didn't exist before the transaction is completed. for audit purpose)
-        // Give value for the transaction
-        // Update the transaction to note that you have given value for the transaction
-        // You can also redirect to your success page from here
 
   }
 }

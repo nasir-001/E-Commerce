@@ -79,14 +79,40 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/category">Shop <span class="fas fa-shopping-basket"></span></a>
                                     </li>
+                                    @guest
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{{ route('login') }}">Login <span class="fas fa-sign-in-alt"></span></a>
+                                        </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="{{ route('login') }}">Login <span class="fas fa-sign-in-alt"></span></a>
+                                        @if (Route::has('register'))
+                                            <a style="font-size: 20px; color: white;" class="nav-link" href="{{ route('register') }}">Sign Up <span class="fas fa-layer-group"></span></a>
+                                        @endif
+                                    @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+        
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+        
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
                                     </li>
-
-                                    @if (Route::has('register'))
-                                        <a style="font-size: 20px; color: white;" class="nav-link" href="{{ route('register') }}">Register <span class="fas fa-layer-group"></span></a>
-                                    @endif
+                                    @endguest
+                                    <li class="nav-item active">  
+                                        <a class="nav-link" href="{{ route('cart.index') }}">Cart <span class="fas fa-shopping-cart"></span>
+                                            @if(Cart::getContent()->count() > 0)
+                                                <span>{{ Cart::getContent()->count() }}</span>
+                                            @endif
+                                        </a>
+                                    </li>
                                     
                                 </ul>
                                 

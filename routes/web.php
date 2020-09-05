@@ -19,7 +19,7 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 
 Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
-Route::get('/pay', 'CheckoutController@index')->name('checkout.index');
+Route::get('/pay', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 
