@@ -11,7 +11,11 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" placeholder="Email address" name="email" value="{{ auth()->user()->email }}" class="form-control" readonly>
+                        @if (auth()->user())
+                            <input type="email" placeholder="Email address" name="email" value="{{ auth()->user()->email }}" class="form-control" readonly>
+                        @else
+                            <input type="email" placeholder="Email address" name="email" value="{{ old('email') }}" class="form-control" required>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
@@ -62,7 +66,7 @@
                     {{-- Hidden fields --}}
                     <input type="hidden" name="currency" value="NGN" />
                     <input type="hidden" name="country" value="NG" />
-                    <input type="hidden" name="amount" value="{{ $total }}" /> <!-- Replace the value with your transaction amount -->
+                    <input type="hidden" name="amount" value="{{ $total }}" />
                     <input class="btn btn-success" type="submit" value="Proceed to buy"  />
                 </form>
             </div>

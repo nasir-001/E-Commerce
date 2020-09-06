@@ -28,7 +28,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="height: 520px;">
+            <div class="card" style="height: 600px;">
                 <div style="font-size: 50px;" class="card-header text-center">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -85,6 +85,9 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link" href="{{ route('guestCheckout.index') }}">Checkout as a Guest</a>
                             </div>
                         </div>
                     </form>

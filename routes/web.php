@@ -21,6 +21,8 @@ Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
 Route::get('/pay', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 
+Route::get('/guestPay', 'CheckoutController@index')->name('guestCheckout.index');
+
 Route::delete('/cart/{id}', 'CartController@destroy')->name('cart.destroy');
 
 Route::patch('/cart/{id}', 'CartController@update')->name('cart.update');

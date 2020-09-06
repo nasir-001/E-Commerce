@@ -48,7 +48,7 @@
         <div class="container justify-content-center mt-5">
             <div class="container">
                 <div class="row mb-5">     
-                    <div class="col-md-5 col-lg-3 col-sm-2 col-xl-3">
+                    <div class="col-md-5 col-lg-5 col-sm-5 col-xl-3">
                         <div class="card active product-section-image">
                             <img id="currentImage" class="card" src="{{ asset('images/welcome2.jpg') }}">
                         </div>

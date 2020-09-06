@@ -1,11 +1,24 @@
+<style>
+    @media (max-width: 1000px) {
+        h1 {
+            display: none;
+        }
+    }
 
+    @media (min-width: 1000px) {
+        h4 {
+            display: none;
+        }
+    }
+</style>
 <nav>
-    <h3 class="text-center mt-3 mb-2">Categories</h3>
-    <div class="row ml-3">
+    <h1 class="ml-3 mt-5 mb-4">Categories</h1>
+    <h4 class="ml-3 mt-3 mb-4">Categories</h4>
+    <div class="row">
         <ul class="side-menu">
             @foreach ($categories as $category)
                 <li class="list-unstyled">
-                    <a class="" href="/category/{{ $category->id }}">{{ $category->name }}</a>
+                    <a  class="text-right" href="/category/{{ $category->id }}">{{ $category->name }}</a>
                 </li>
                 <hr>
             @endforeach

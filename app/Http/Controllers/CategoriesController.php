@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        $products = Product::inRandomOrder()->paginate(12);
+        $products = Product::inRandomOrder()->paginate(8);
         $categories = Category::all();
         
         return view('pages.dashboard')->with([
@@ -56,7 +56,7 @@ class CategoriesController extends Controller
     public function show(Category $category, Request $request)
     {
         $category = Category::where('id', $request->category->id)->first();
-        $products = $category->products()->paginate(10);
+        $products = $category->products()->paginate(8);
         $categories = Category::all();
     
         return view('pages.products')->with([

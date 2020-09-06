@@ -20,8 +20,7 @@ class RaveController extends Controller
   public function initialize(Request  $request)
   {
     //This initializes payment and redirects to the payment gateway
-    //The initialize method takes the parameter of the redirect URL
-    // dd($request->all());
+	//The initialize method takes the parameter of the redirect URL
     Rave::initialize(route('callback'));
   }
 
@@ -40,31 +39,34 @@ class RaveController extends Controller
     $body = json_decode($resp, true);
     $txRef = $body['data']['data']['txRef'];
     $data = Rave::verifyTransaction($txRef);
-    
-    // Insert into orders table 
+
+	dd($data);
+	
     $order = Order::create([
-      'user_id' => auth()->user() ? auth()->user()->id : null,
-      'billing_email' => $request->email,
-      'billing_first_name' => $request->first_name,
-      'billing_last_name' => $request->last_name,
-      'billing_address' => $request->address,
-      'billing_city' => $request->city,
-      'billing_town' => $request->town,
-      'billing_postalcode' => $request->postalcode,
-      'billing_phone' => $request->phone,
-      'billing_total' => Cart::getTotal(),
-      'error' => null,
-
-    ]);
-
-    foreach (Cart::getContent() as $item) 
-    {
-      OrderProduct::create([
-        'order_id' => $order->id,
-        'product_id' => $item->model->id,
-        'quantity' => $item->quantity,
+        'user_id' => auth()->user() ? auth()->user()->id : null,
+        'billing_email' => $request->email,
+        'billing_first_name' => $request->first_name,
+        'billing_last_name' => $request->last_name,
+        'billing_address' => $request->address,
+        'billing_city' => $request->city,
+        'billing_town' => $request->town,
+        'billing_postalcode' => $request->postalcode,
+        'billing_phone' => $request->phone,
+        'billing_total' => Cart::getTotal(),
+        'error' => null,
+  
       ]);
-    }
+
+      foreach (Cart::getContent() as $item) 
+      {
+        OrderProduct::create([
+          'order_id' => $order->id,
+          'product_id' => $item->model->id,
+          'quantity' => $item->quantity,
+        ]);
+      }
+    
+    return redirect()->route('empty');
 
   }
 }

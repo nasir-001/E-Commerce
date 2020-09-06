@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
+use App\OrderProduct;
 use Cart;
 class CheckoutController extends Controller
 {
@@ -14,6 +16,11 @@ class CheckoutController extends Controller
     public function index()
     {
         $total = Cart::getTotal();
+
+        if(auth()->user() && request()->is('guestPay')) {
+            return redirect()->route('checkout.index');
+        }
+
         return view('pages.checkout')->with([
             'total' => $total
         ]);
@@ -37,7 +44,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

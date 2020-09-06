@@ -10951,7 +10951,7 @@ body {
 }
 
 p {
-  color: lightgray;
+  color: darkgray;
   font-family: sans-serif;
   font-size: 1.1em;
   font-weight: 300;
@@ -10968,7 +10968,7 @@ p {
 }
 
 a {
-  color: gray;
+  color: darkgray;
 }
 
 a:hover {

@@ -9,6 +9,9 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <title>E-Commerce @yield('title')</title>
 </head>
+<style>
+    
+</style>
 <body>
     <div id="container">
 
@@ -18,7 +21,10 @@
         </div>
         
         <div class="row">
-            <div class="col-2" id="sidebar">
+            <div class="col">
+                
+            </div>
+            <div class="col">
                 @include('includes.sidebar')
             </div>
 
