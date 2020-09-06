@@ -8,7 +8,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <style>
-    .ftco-animate {
+  .ftco-animate {
   opacity: 0;
   visibility: hidden; }
 
@@ -154,8 +154,9 @@
           <div class="row mb-5">
             <div class="col-md">
                <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">About</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h2 class="ftco-heading-2">About Us</h2>
+                <p>This is a Online shopping application, where you can create your account and proceed to buy
+                  our product at affordable price with fast delivery within 24hours.<br>Note: You can also buy product as a guest(without creating an account)</p>
                 <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                   <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                   <li><a href="#"><span class="fab fa-facebook"></span></a></li>
@@ -165,38 +166,37 @@
             </div>
             <div class="col-md">
               <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Employers</h2>
+                <h2 class="ftco-heading-2">Why Us?</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#" class="py-2 d-block">How it works</a></li>
-                  <li><a href="#" class="py-2 d-block">Register</a></li>
-                  <li><a href="#" class="py-2 d-block">Post a Job</a></li>
-                  <li><a href="#" class="py-2 d-block">Advance Skill Search</a></li>
-                  <li><a href="#" class="py-2 d-block">Recruiting Service</a></li>
-                  <li><a href="#" class="py-2 d-block">Blog</a></li>
-                  <li><a href="#" class="py-2 d-block">Faq</a></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Good Service</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Genuine Business</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Fast Reply</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Fast Delivery</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Discount on every transaction</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Blog</h6></li>
                 </ul>
               </div>
             </div>
             <div class="col-md">
               <div class="ftco-footer-widget mb-4 ml-md-4">
-                <h2 class="ftco-heading-2">Workers</h2>
+                <h2 class="ftco-heading-2">How it works</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#" class="py-2 d-block">How it works</a></li>
-                  <li><a href="#" class="py-2 d-block">Register</a></li>
-                  <li><a href="#" class="py-2 d-block">Post Your Skills</a></li>
-                  <li><a href="#" class="py-2 d-block">Job Search</a></li>
-                  <li><a href="#" class="py-2 d-block">Emploer Search</a></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Register</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Search for product</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Add to cart</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Update quantity</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Proceed to checkout</h6></li>
                 </ul>
               </div>
             </div>
             <div class="col-md">
               <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Have a Questions?</h2>
+                <h2 class="ftco-heading-2">Want to know more?</h2>
                 <div class="block-23 mb-3">
                   <ul>
-                    <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                    <li><span class="fas fa-globe" style="color: white"></span><span class="text" style="color: white"> No.12 Mamman Yola Street Hayind Dogo Samaru Zaria</span></li>
+                    <li><a href="#"><span class="fas fa-phone"></span><span class="text"> 08139332116</span></a></li>
+                    <li><span class="fas fa-envelope" style="color: white"></span><span class="text" style="color: white"> nasirlawal001@gmail.com</span></li>
                   </ul>
                 </div>
               </div>
@@ -206,7 +206,7 @@
             <div class="col-md-12 text-center">
       
               <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i style="color: red" class="fas fa-heart" aria-hidden="true"></i> by Nasir
       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
           </div>
