@@ -47,7 +47,7 @@
 
 .ftco-footer {
   font-size: 16px;
-  background: #000000;
+  background: #141414;
   padding: 7em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -193,10 +193,10 @@
               <div class="ftco-footer-widget mb-4">
                 <h2 class="ftco-heading-2">Want to know more?</h2>
                 <div class="block-23 mb-3">
-                  <ul>
-                    <li><span class="fas fa-globe" style="color: white"></span><span class="text" style="color: white"> No.12 Mamman Yola Street Hayind Dogo Samaru Zaria</span></li>
-                    <li><a href="#"><span class="fas fa-phone"></span><span class="text"> 08139332116</span></a></li>
-                    <li><span class="fas fa-envelope" style="color: white"></span><span class="text" style="color: white"> nasirlawal001@gmail.com</span></li>
+                  <ul class="list-unstyled">
+                    <li class="mt-1"><span class="fas fa-globe" style="color: white"></span><span class="text" style="color: white"> No.12 Mamman Yola Street Hayind Dogo Samaru Zaria</span></li>
+                    <li class="mt-1"><span class="fas fa-phone" style="color: white"></span><span class="text" style="color: white"> 08139332116</span></li>
+                    <li class="mt-1"><span class="fas fa-envelope" style="color: white"></span><span class="text" style="color: white"> nasirlawal001@gmail.com</span></li>
                   </ul>
                 </div>
               </div>

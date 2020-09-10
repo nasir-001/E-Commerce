@@ -94,7 +94,8 @@ class ProductEditScreen extends Screen
      *
      * @return Layout[]
      * 
-     */
+     */ 
+    
     public function layout(): array
     {
         return [

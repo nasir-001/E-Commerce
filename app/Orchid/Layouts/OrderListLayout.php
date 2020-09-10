@@ -27,13 +27,20 @@ class OrderListLayout extends Table
     protected function columns(): array
     {
         return [
-            TD::set('name', 'Name')
+            TD::set('name', 'Customer')
                 ->render(function (Order $order) {
-                    return Link::make($order->user_id)
+                    return Link::make($order->billing_first_name)
                         ->route('platform.order.edit', $order);
                 }),
-
-            TD::set('created_at', 'Created'),
+            
+            TD::set('billing_email', 'Email'),
+            TD::set('created_at', 'Order time'),
+            TD::set('billing_total', 'Amount'),
+            TD::set('billing_address', 'Address'),
+            TD::set('billing_phone', 'Phone'),
+            TD::set('billing_city', 'City'),
+            TD::set('billing_town', 'Town'),
+            TD::set('billing_postalcode', 'Zip Code'),
         ];
     }
 }

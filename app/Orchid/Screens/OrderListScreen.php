@@ -6,6 +6,8 @@ use Orchid\Screen\Screen;
 use App\Orchid\Layouts\OrderListLayout;
 use App\Order;
 use Orchid\Screen\Link;
+use Orchid\Screen\Repository;
+
 class OrderListScreen extends Screen
 {
     /**
@@ -30,7 +32,7 @@ class OrderListScreen extends Screen
     public function query(): array
     {
         return [
-            'orders' => Order::paginate()
+            'orders' => Order::paginate(),
         ];
     }
 

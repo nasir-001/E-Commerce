@@ -75,6 +75,11 @@ class PlatformProvider extends OrchidServiceProvider
             //     ->icon('icon-docs')
             //     ->url('https://orchid.software/en/docs'),
 
+            ItemMenu::label('View all orders')
+                ->icon('icon-briefcase')
+                ->title('Manage Orders')
+                ->route('platform.order.list'),
+
             ItemMenu::label('Create category')
                 ->icon('icon-layers')
                 ->route('platform.category.edit')
@@ -92,11 +97,6 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('View products')
                 ->icon('icon-modules')
                 ->route('platform.product.list'),
-
-            ItemMenu::label('View all orders')
-                ->icon('icon-briefcase')
-                ->title('Manage Orders')
-                ->route('platform.order.list'),
 
             ItemMenu::label('Email sender')
                 ->icon('icon-envelope-letter')

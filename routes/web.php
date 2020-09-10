@@ -35,3 +35,5 @@ Route::resource('/category', 'CategoriesController');
 Route::post('/pay', 'RaveController@initialize')->name('pay');
 
 Route::any('/rave/callback', 'RaveController@callback')->name('callback');
+
+Route::get('/success', 'RaveController@addToOrdersTables')->name('success');

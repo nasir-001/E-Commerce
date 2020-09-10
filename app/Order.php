@@ -9,7 +9,7 @@ class Order extends Model
 
     use AsSource;
 
-    protected $fillable = ['user_id', 'billing_first_name', 'billing_last_name','billing_email', 'billing_address',
+    protected $fillable = ['user_id', 'billing_email', 'billing_first_name', 'billing_last_name', 'billing_address',
         'billing_city', 'billing_town', 'billing_postalcode', 'billing_phone', 'billing_total', 'error'
     ];
 

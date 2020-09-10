@@ -24,6 +24,7 @@ use App\Orchid\Screens\ProductEditScreen;
 use App\Orchid\Screens\ProductListScreen;
 use App\Orchid\Screens\OrderListScreen;
 use App\Orchid\Screens\OrderEditScreen;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -79,4 +80,6 @@ Route::screen('products', ProductListScreen::class)->name('platform.product.list
 Route::screen('orders', OrderListScreen::class)->name('platform.order.list');
 
 // View a single order
-Route::screen('order/{order?}', OrderEditScreen::class)->name('platform.order.edit');
+// Route::screen('order/{order?}', OrderEditScreen::class)->name('platform.order.edit');
+
+Route::get('order/{order?}', [\App\Http\Controllers\OrderProductController::class, 'show'])->name('platform.order.edit');
