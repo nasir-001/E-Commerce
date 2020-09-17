@@ -18,8 +18,8 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function product() 
+    public function products() 
     {
-        $this->belongsToMany('App\Product')->withPivot('quantity');
+        return $this->belongsToMany('App\Product')->withPivot('quantity');
     }
 }

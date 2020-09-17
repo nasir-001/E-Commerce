@@ -6,6 +6,7 @@ use App\Order;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
+use Orchid\Support\Color;
 
 class OrderListLayout extends Table
 {

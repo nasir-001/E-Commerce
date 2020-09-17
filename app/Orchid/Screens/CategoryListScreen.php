@@ -6,6 +6,7 @@ use App\Orchid\Layouts\CategoryListLayout;
 use App\Category;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
+use Orchid\Support\Color;
 
 class CategoryListScreen extends Screen
 {
@@ -45,6 +46,7 @@ class CategoryListScreen extends Screen
         return [
             Link::make('Create New')
                 ->icon('icon-pencil')
+                ->type(Color::INFO())
                 ->route('platform.category.edit')
         ];
     }

@@ -16,7 +16,7 @@ class CheckoutController extends Controller
     public function index()
     {
         $total = Cart::getTotal();
-
+        
         if(auth()->user() && request()->is('guestPay')) {
             return redirect()->route('checkout.index');
         }

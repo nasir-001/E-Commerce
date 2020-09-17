@@ -7,6 +7,7 @@ use App\Orchid\Layouts\OrderListLayout;
 use App\Order;
 use Orchid\Screen\Link;
 use Orchid\Screen\Repository;
+use Orchid\Support\Color;
 
 class OrderListScreen extends Screen
 {
@@ -57,6 +58,7 @@ class OrderListScreen extends Screen
     {
         return [
             OrderListLayout::class
+            
         ];
     }
 }

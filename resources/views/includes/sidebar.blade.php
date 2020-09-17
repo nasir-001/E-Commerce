@@ -19,7 +19,7 @@
             @foreach ($categories as $category)
                 <li class="list-unstyled">
                     <a  class="text-right" href="/category/{{ $category->id }}">{{ $category->name }}</a>
-                </li>
+                </li> 
                 <hr>
             @endforeach
         </ul>

@@ -6,6 +6,7 @@ use App\Product;
 use App\Orchid\Layouts\ProductListLayout;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
+use Orchid\Support\Color;
 
 class ProductListScreen extends Screen
 {
@@ -44,6 +45,7 @@ class ProductListScreen extends Screen
     {
         return [
             Link::make('Created New')
+                ->type(Color::INFO())
                 ->icon('icon-pencil')
                 ->route('platform.product.edit')
         ];

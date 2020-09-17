@@ -19,6 +19,7 @@ use Orchid\Screen\Screen;
 use Orchid\Screen\Layout;
 use Orchid\Support\Facades\Alert;
 use Orchid\Attachment\File;
+use Orchid\Support\Color;
 
 class ProductEditScreen extends Screen
 {
@@ -73,17 +74,20 @@ class ProductEditScreen extends Screen
     {
         return [
             Button::make('Create product')
+                ->type(Color::INFO())
                 ->icon('icon-pencil')
                 ->method('createOrUpdate')
                 ->canSee(!$this->exists),
 
             Button::make('Update')
                 ->icon('icon-note')
+                ->type(Color::INFO())
                 ->method('createOrUpdate')
                 ->canSee($this->exists),
 
             Button::make('Remove')
                 ->icon('icon-trash')
+                ->type(Color::DANGER())
                 ->method('remove')
                 ->canSee($this->exists),
         ];
@@ -101,37 +105,45 @@ class ProductEditScreen extends Screen
         return [
             Layout::rows([
                 Input::make('product.name')
+                    ->required()
                     ->title('Product Name')
                     ->placeholder('Enter name for your product')
                     ->help('Provide a short and descriptive name for the product'),
 
                 Input::make('product.slug')
+                    ->required()
                     ->title('Product title')
                     ->placeholder('Product title')
                     ->help('Please enter a title name for this product'),
 
                 Input::make('product.details')
+                    ->required()
                     ->title('Product details')
                     ->placeholder('Product details')
                     ->help('Provide a details for this product'),
 
                 SimpleMDE::make('product.description')
+                    ->required()
                     ->placeholder('Enter the description for this product')
                     ->title('Product desciption'),
 
                 Cropper::make('product.image')
+                    ->required()
                     ->horizontal()
                     ->title('Select first image for this product'),
 
                 Cropper::make('product.images')
+                    ->required()
                     ->horizontal()
                     ->title('optional image for this product'),
                     
                 Cropper::make('product.images1')
+                    ->required()
                     ->horizontal()
                     ->title('Optional image for this product'),
 
                 Input::make('product.price')
+                    ->required()
                     ->title('Product price')
                     ->placeholder('Product price')
                     ->type('number')

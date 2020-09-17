@@ -15,6 +15,7 @@ use Orchid\Screen\Layout;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Alert;
+use Orchid\Support\Color;
 
 class CategoryEditScreen extends Screen
 {
@@ -69,19 +70,23 @@ class CategoryEditScreen extends Screen
     {
         return [
             Button::make('Create Category')
+                ->type(Color::INFO())
                 ->icon('icon-pencil')
                 ->method('createOrUpdate')
                 ->canSee(!$this->exists),
 
             Button::make('Update')
+                ->type(Color::INFO())
                 ->icon('icon-note')
                 ->method('createOrUpdate')
                 ->canSee($this->exists),
 
             Button::make('Remove')
+                ->type(Color::DANGER())
                 ->icon('icon-trash')
                 ->method('remove')
                 ->canSee($this->exists),
+                
             
         ];
     }
@@ -96,12 +101,14 @@ class CategoryEditScreen extends Screen
         return [
             Layout::rows([
                 Input::make('category.name')
+                    ->required()
                     ->type('text')
                     ->title('Category Name')
                     ->placeholder('Enter category name')
                     ->help('Please enter a short and descriptive name for your customers'),
 
                 Input::make('category.slug')
+                    ->required()
                     ->type('text')
                     ->title('Category Slug')
                     ->placeholder('Category slug')

@@ -16,7 +16,7 @@ use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use Illuminate\Support\Facades\Route;
 
-            // My Classess
+            // My Screeens
 use App\Orchid\Screens\EmailSenderScreen;
 use App\Orchid\Screens\CategoryEditScreen;
 use App\Orchid\Screens\CategoryListScreen;
@@ -25,6 +25,7 @@ use App\Orchid\Screens\ProductListScreen;
 use App\Orchid\Screens\OrderListScreen;
 use App\Orchid\Screens\OrderEditScreen;
 use App\Http\Controllers\OrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -76,10 +77,10 @@ Route::screen('product/{product?}', ProductEditScreen::class)->name('platform.pr
 // Listing all Product Route
 Route::screen('products', ProductListScreen::class)->name('platform.product.list');
 
-// List all successfully orders
-Route::screen('orders', OrderListScreen::class)->name('platform.order.list');
+// List all orders
 
-// View a single order
-// Route::screen('order/{order?}', OrderEditScreen::class)->name('platform.order.edit');
+Route::get('orders', [\App\Http\Controllers\OrdersController::class, 'index'])->name('platform.order.list');
+
+// View a single order with it's products
 
 Route::get('order/{order?}', [\App\Http\Controllers\OrderProductController::class, 'show'])->name('platform.order.edit');

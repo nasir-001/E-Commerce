@@ -10,7 +10,11 @@
     <title>E-Commerce @yield('title')</title>
 </head>
 <style>
-    
+    @media (min-width: 1000px) {
+        #empty {
+            display: none;
+        }
+    }
 </style>
 <body>
     <div id="container">

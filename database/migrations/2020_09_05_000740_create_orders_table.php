@@ -27,9 +27,9 @@ class CreateOrdersTable extends Migration
             $table->string('billing_phone');
             $table->string('billing_total');
             $table->string('payment_gateway')->default('flutterwave');
-            $table->string('shipped')->default('false');
+            $table->boolean('shipped')->default(false);
             $table->string('error')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

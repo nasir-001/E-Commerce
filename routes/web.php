@@ -19,6 +19,14 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 
 Route::post('/cart/checkout', 'CartController@update')->name('cart.update');
 
+Route::post('/order', 'OrderProductController@store')->name('order.store');
+
+Route::get('/destroy', 'OrderProductController@destroy')->name('order.destroy');
+
+Route::get('/order/{id}', 'OrderProductController@show')->name('order.show');
+
+Route::get('/order/{id}', 'OrdersController@destroy')->name('order.destroy');
+
 Route::get('/pay', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 
 Route::get('/guestPay', 'CheckoutController@index')->name('guestCheckout.index');
@@ -37,3 +45,5 @@ Route::post('/pay', 'RaveController@initialize')->name('pay');
 Route::any('/rave/callback', 'RaveController@callback')->name('callback');
 
 Route::get('/success', 'RaveController@addToOrdersTables')->name('success');
+
+Route::get('/thankyou', 'ThankYouController@index')->name('thankyou');

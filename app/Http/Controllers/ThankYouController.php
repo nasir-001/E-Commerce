@@ -3,20 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\OrderProduct;
-use App\Order;
-use Orchid\Screen\Switcher;
 
-class OrderProductController extends Controller
+class ThankYouController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(OrderProduct $order, Request $request)
+    public function index()
     {
-       
+        return view('thanks.thank');
     }
 
     /**
@@ -37,27 +34,18 @@ class OrderProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show($id)
     {
-        $order = Order::find($id);
-        // dd($order);
-        $orders = Order::orderBy('created_at', 'desc')->get();
-        $products = $order->products;
-
-        // dd($products);
-        return view('orders.order')->with([
-            'products' => $products,
-            'orders' => $orders,
-            'order' => $order
-        ]);
+        //
     }
 
     /**
@@ -91,6 +79,6 @@ class OrderProductController extends Controller
      */
     public function destroy($id)
     {
-
+        //
     }
 }

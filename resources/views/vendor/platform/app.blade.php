@@ -12,7 +12,7 @@
     @else
         <link rel="stylesheet" type="text/css" href="{{  orchid_mix('/css/orchid.css','orchid') }}">
     @endif
-
+  
     @stack('head')
 
     <meta name="turbolinks-root" content="{{  Dashboard::prefix() }}">

@@ -17,65 +17,17 @@ class RaveController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return void
    */
+
   public function initialize(Request  $request)
   {
-    //This initializes payment and redirects to the payment gateway
-  	//The initialize method takes the parameter of the redirect URL
-	  // $this->addToOrdersTables($request, null);
-	  
-
+	// $custumerData = $request->all();
+	$this->addToOrdersTables($request, null);
+	
     Rave::initialize(route('callback'));
   }
 
-// protected function addToOrdersTables($request, $error)
-//   {
-// 	$order = Order::create([
-// 		'user_id' => auth()->user() ? auth()->user()->id : null,
-// 		'billing_email' => $request->email,
-// 		'billing_first_name' => $request->first_name,
-// 		'billing_last_name' => $request->last_name,
-// 		'billing_address' => $request->address,
-// 		'billing_city' => $request->city,
-// 		'billing_town' => $request->town,
-// 		'billing_postalcode' => $request->postalcode,
-// 		'billing_phone' => $request->phone,
-// 		'billing_total' => Cart::getTotal(),
-// 		'error' => $error,
-  
-// 	  ]);
-  
-// 	  foreach (Cart::getContent() as $item) 
-// 		{
-		  
-// 		  OrderProduct::create([
-// 			'order_id' => $order->id,
-// 			'product_id' => $item->model->id,
-// 			'quantity' => $item->quantity,
-// 		  ]);
-// 		}
-//   }
-  
-  /**
-   * Obtain Rave callback information
-   * Display a listing of the resource.
-   * @param Illuminate\Http\Request  $request
-   * @return void
-   */
-  public function callback(Request  $request)
+protected function addToOrdersTables(Request $request)
   {
-    $resp = $request->resp;
-    $body = json_decode($resp, true);
-    $txRef = $body['data']['data']['txRef'];
-    $data = Rave::verifyTransaction($txRef);
-    
-    // Check for conditions here if transaction amount is paid then return addToOrdersTables else do something else
-    return redirect()->route('success');   
-
-  }
-  
-  protected function addToOrdersTables(Request $request)
-  { 
-    
 	$order = Order::create([
 		'user_id' => auth()->user() ? auth()->user()->id : null,
 		'billing_email' => $request->email,
@@ -101,4 +53,33 @@ class RaveController extends Controller
 		  ]);
 		}
   }
+  
+  /**
+   * Obtain Rave callback information
+   * Display a listing of the resource.
+   * @param Illuminate\Http\Request  $request
+   * @return void
+   */
+		
+	public function callback(Request  $request)
+	{
+		// $this->addToOrdersTables($request, null);
+
+		$json = json_decode($request->resp);
+		
+		$payload = Rave::verifyTransaction($json->data->data->txRef);
+
+		// dd($payload->data->chargedamount);
+		
+		if ($payload->data->chargedamount > 0 )
+		{
+			return redirect()->route('thankyou');
+
+		} else {
+			dd($actualAmount);
+		}
+
+		// return redirect()->route('success');
+	}
+
 }

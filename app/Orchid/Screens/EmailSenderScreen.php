@@ -13,6 +13,7 @@ use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Layout;
 use Orchid\Screen\Actions\Button;
 use Orchid\Support\Facades\Alert;
+use Orchid\Support\Color;
 
 class EmailSenderScreen extends Screen
 {
@@ -51,6 +52,7 @@ class EmailSenderScreen extends Screen
     {
         return [
             Button::make('Send Message')
+                ->type(Color::SUCCESS())
                 ->icon('icon-paper-plane')
                 ->method('sendMessage')
         ];
