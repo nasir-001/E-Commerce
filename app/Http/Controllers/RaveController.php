@@ -61,25 +61,28 @@ protected function addToOrdersTables(Request $request)
    * @return void
    */
 		
-	public function callback(Request  $request)
+	public function callback(Request  $request, $id)
 	{
-		// $this->addToOrdersTables($request, null);
 
 		$json = json_decode($request->resp);
 		
 		$payload = Rave::verifyTransaction($json->data->data->txRef);
-
-		// dd($payload->data->chargedamount);
 		
 		if ($payload->data->chargedamount > 0 )
 		{
+			$order = Order::find($id);
+			$order->error = "No";
+			$order->save();
 			return redirect()->route('thankyou');
 
 		} else {
-			dd($actualAmount);
+
+			$order = Order::find($id);
+			$order->error = "Yes";
+			$order->save();
+			return redirect()->route('sorry');
 		}
 
-		// return redirect()->route('success');
 	}
 
 }

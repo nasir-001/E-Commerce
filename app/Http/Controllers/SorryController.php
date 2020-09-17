@@ -3,23 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
-use App\OrderProduct;
 
-class OrdersController extends Controller
+class SorryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Order $order)
+    public function index()
     {
-        // $orders = Order::all();
-        $orders = Order::orderBy('created_at', 'desc')->get();
-        return view('orders.orders')->with([
-            'orders' => $orders,
-        ]);
+        return view('thanks.sorry');
     }
 
     /**
@@ -74,13 +68,7 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $order = Order::find($id);
-        $order->shipped = true;
-        $order->save();
-        $orders = Order::orderBy('created_at', 'desc')->get();
-        return view('orders.orders')->with([
-            'orders' => $orders,
-        ]);
+        //
     }
 
     /**
@@ -91,8 +79,6 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        $order = Order::find($id);
-        $order->delete();
-        return redirect()->back();
+        //
     }
 }

@@ -23,9 +23,11 @@ Route::post('/order', 'OrderProductController@store')->name('order.store');
 
 Route::get('/destroy', 'OrderProductController@destroy')->name('order.destroy');
 
-Route::get('/order/{id}', 'OrderProductController@show')->name('order.show');
+Route::get('/order/view/{id}', 'OrderProductController@show')->name('order.show');
 
 Route::get('/order/{id}', 'OrdersController@destroy')->name('order.destroy');
+
+Route::post('/order/update/{id}', 'OrdersController@update')->name('order.update');
 
 Route::get('/pay', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 
@@ -47,3 +49,5 @@ Route::any('/rave/callback', 'RaveController@callback')->name('callback');
 Route::get('/success', 'RaveController@addToOrdersTables')->name('success');
 
 Route::get('/thankyou', 'ThankYouController@index')->name('thankyou');
+
+Route::get('/sorry', 'SorryController@index')->name('sorry');

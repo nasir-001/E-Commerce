@@ -74,7 +74,8 @@ input:checked + .slider:before {
 @section('content')
 
     <div class="admin-wrapper py-3">
-        <div class="row">
+		
+        <div class="row {{ $order->shipped ? 'alert-info' : '' }}">
             <div class="col">
                 <div class="container">
                     <div class="container mt-5">
@@ -142,7 +143,7 @@ input:checked + .slider:before {
             </div>
         </div>
     
-        <form action="{{ route('order.store') }}" method="POST">
+        <form action="{{ route('order.update', ['id'=>$order->id]) }}" method="POST">
             @csrf
             <div class="row">
                 <div class="col m-5">
@@ -153,7 +154,7 @@ input:checked + .slider:before {
                     </label>
                 </div>
                 <div class="col mt-3">
-                    <button style="width: 60px" class="btn btn-outline-primary m-5">Save</button> 
+					<button style="width: 60px" class="btn btn-outline-primary m-5">Save</button> 
                 </div>
             </div>
         </form>

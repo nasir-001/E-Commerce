@@ -1,8 +1,8 @@
 @extends('platform::dashboard')
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/fontawesome/css/all.css') }}" rel="stylesheet">
-@section('title',__('Oder details'))
-@section('description', __('All information for this order'))
+@section('title',__('All Orders'))
+@section('description', __('All orders in this company'))
 
 @section('navbar')
     
@@ -12,6 +12,7 @@
 
     <div class="admin-wrapper py-3">
         @if ($orders->count() > 0)
+       
         <div class="row">
             <div class="col">
                 <div class="row">
@@ -33,7 +34,7 @@
                 </div>
                 <hr>
                 @foreach ($orders as $order)
-                    <div class="row {{ $order->error ? 'alert-danger' : '' }} {{ $order->shipped ? 'alert-success' : '' }}">
+                    <div class="row {{ $order->error == 'Yes' ? 'alert-danger' : '' }} {{ $order->shipped ? 'alert-info' : '' }}">
                         <div class="col ml-1">
                            <h4> {{ $order->billing_first_name }}</h4>
                         </div>
@@ -49,7 +50,7 @@
                         <div class="col">
                             <div class="row">
                                 <div class="cols mt-3">
-                                    <a href="/order/{{ $order->id }}" class="btn btn-primary btn-sm">View <i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('order.show', ['id'=>$order->id]) }}" class="btn btn-primary btn-sm">View <i class="fas fa-eye"></i></a>
                                 </div>
                                 <div class="cols mt-3">
                                     <form action="{{ route('order.destroy', ['id'=>$order->id]) }}">
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="mt-1 mb-1">
                 @endforeach
             </div>
         </div>
