@@ -44,13 +44,13 @@
                                         <img src="{{ asset('images/welcome2.jpg') }}" width="80">
                                     </a>
                                 </div>
-                                <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
+                                <div class="col-md-3 col-sm-2 col-lg-3 col-xl-3 mt-3">
                                     <a href="/product/{{ $product->id }}">
                                         <h5 style="color: gray">{{ $product->name }}</h5>
                                         <p style="color: gray">{{ $product->model->details }}</p>
                                     </a>
                                 </div>
-                                <div class="col-md-3 col-sm-2 col-xl-3 mt-3">
+                                <div class="col-md-3 col-sm-2 col-lg-3 col-xl-3 mt-3">
                                     <form action="{{ route('cart.destroy', ['id' => $product->id]) }}" method="POST">
                                         @method('delete')
                                         @csrf
@@ -66,8 +66,8 @@
                                         </select>
                                     </form>
                                 </div>
-                                <div class="col-md-3 col-sm-3 col-xl-3 mt-3">
-                                    NGN {{ $product->price * $product->quantity}}
+                                <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 mt-3">
+                                    NGN {{ $product->price * $product->quantity }}
                                 </div>
                             </div>
                         </div>

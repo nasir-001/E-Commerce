@@ -8,10 +8,17 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <title>Welcome | Hamdala~Store</title>
     </head>
+    <style>
+        @media screen and (min-width: 990px) {
+            img {
+                height: 600px;
+            }
+        }
+    </style>
     <body>
         
-        <div id="container" class="mb-2">
-            <div  id="main">
+        <div id="container">
+            {{-- <div  id="main"> --}}
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" style="height: 80px">
                     <a class="navbar-brand" href="#" style="font-size: 2rem">Hamdala</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,16 +68,58 @@
                     </div>
                   </nav>
             </div>
-            
-            <div class="container mt-5">
+
+            <div class="container">
                 <div class="row fill-viewport align-items-start">
                   <div class="col-12 col-md-6 mx-auto text-center">
-                    <h1 class="text-dark display-3">Hamdala Store</h1>
-                    <a href="/category" class="btn btn-outline-success">Go to Shop</a>
-                  </div>
+                    <h1 class="text-dark display-4">Hamdala Store</h1>                  </div>
                 </div>
               </div>
             </div>
+            
+            {{-- Carousel --}}
+
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+              
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="container text-center mt-2 border-bottom">
+                        <div class="carousel-item active">
+                            <img width="100%" src="{{ asset('images/welcome7.jpg') }}">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" src="{{ asset('images/welcome8.jpg') }}">
+                        </div>
+                        <div class="carousel-item">
+                            <img width="100%" src="{{ asset('images/welcome5.jpg') }}">
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon" style="background-color: black"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon" style="background-color: black"></span>
+                </a>
+              
+            </div>
+            <div class="container mt-5">
+                <div class="row fill-viewport align-items-start">
+                  <div class="col-12 col-md-6 mx-auto text-center">
+                    <a href="/category" class="btn btn-outline-success">Go to Shop</a>
+                </div>
+              </div>
+            </div>
+            
         </div>
         
         <div class="mt-5">

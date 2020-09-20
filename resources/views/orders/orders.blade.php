@@ -34,7 +34,7 @@
                 </div>
                 <hr>
                 @foreach ($orders as $order)
-                    <div class="row {{ $order->error == 'Yes' ? 'alert-danger' : '' }} {{ $order->shipped ? 'alert-info' : '' }}">
+                    <div class="row {{ $order->error == 'Payment not verified' || $order->error == Null ? 'alert-danger' : '' }} {{ $order->shipped ? 'alert-info' : '' }}">
                         <div class="col ml-1">
                            <h4> {{ $order->billing_first_name }}</h4>
                         </div>

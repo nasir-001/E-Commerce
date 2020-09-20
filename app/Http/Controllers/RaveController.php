@@ -68,17 +68,19 @@ protected function addToOrdersTables(Request $request)
 		
 		$payload = Rave::verifyTransaction($json->data->data->txRef);
 		
+		
 		if ($payload->data->chargedamount > 0 )
 		{
+			Cart::clear();
 			$order = Order::find($id);
-			$order->error = "No";
+			$order->error = "None";
 			$order->save();
 			return redirect()->route('thankyou');
 
 		} else {
 
 			$order = Order::find($id);
-			$order->error = "Yes";
+			$order->error = "Payment not verified";
 			$order->save();
 			return redirect()->route('sorry');
 		}

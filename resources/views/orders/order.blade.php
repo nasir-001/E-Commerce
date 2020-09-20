@@ -1,4 +1,5 @@
 @extends('platform::dashboard')
+<link href="{{ asset('css/fontawesome/css/all.css') }}" rel="stylesheet">
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
      /* The switch - the box around the slider */
@@ -75,8 +76,10 @@ input:checked + .slider:before {
 
     <div class="admin-wrapper py-3">
 		
-        <div class="row {{ $order->shipped ? 'alert-info' : '' }}">
+        <div class="row">
+			
             <div class="col">
+				<a href="{{ route('platform.order.list') }}" class="btn btn-success float-right mr-5">Go back <i class="fas fa-arrow-circle-left ml-2"></i></a>
                 <div class="container">
                     <div class="container mt-5">
 						<div class="row fill-viewport align-items-start">
@@ -89,25 +92,29 @@ input:checked + .slider:before {
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Product Id:</th>
-                                    <th scope="col">Product Name:</th>
-                                    <th scope="col">Product Price:</th>
-                                    <th scope="col">Product Quantity:</th>
-                                
+                                    <th scope="col"><strong>Product Information:</strong></th>
+                                    <th scope="col"><strong>Product Image:</strong></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->price }}</td>
-                                    <td>{{ $product->pivot->quantity }}</td>
-                                    
-                                </tr>
-                                </tbody>
-                            </table>
+									<td>
+										<h6> Product Name: <strong> {{ $product->name }}</strong></h6><br>
+										<h6> Product Price: <strong> {{ $product->price }}</strong></h6><br>
+										<h6> Product Quantity: <strong> {{ $product->pivot->quantity }}</strong></h6><br>
+										<h6> Product Details: <strong> {{ $product->details }}</strong></h6>
+									</td>
+                                    <td>
+										<div class="container text-center">
+											<img class="shadow-lg" src="{{ asset('images/welcome.jpg') }}" style="max-height: 100px; max-width: 100px;">
+										</div>
+									</td>
+								</tr>
+								</tbody>
+							</table>
                             <div class="mt-3"></div>
-                        @endforeach
+						@endforeach
+						<h4>Total Amount Paid: <strong>NGN {{ $order->billing_total }}</strong></h4>
 						<div class="container mt-5">
 							<div class="row fill-viewport align-items-start">
 								<div class="col-12 col-md-6 mx-auto text-center">
@@ -135,7 +142,8 @@ input:checked + .slider:before {
 							<h4 for="">Amount Paid:</h4>
 							<h4><li class="list-group-item mt-2 mb-2">{{ $order->billing_total }}</li></h4>
 							<h4 for="">Order Time:</h4>
-							<h4><li class="list-group-item mt-2 mb-2">{{ $order->created_at }}</li></h4>
+              <h4><li class="list-group-item mt-2 mb-2">{{ $order->created_at }}</li></h4>
+              
 						</ul>
 							
 						
