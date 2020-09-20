@@ -77,7 +77,7 @@
             
         @endforeach
 
-        <div class="container m-5">
+        <div class="container m-3">
             <div class="card-body">
                 <div class="row">
                     <div class="col">

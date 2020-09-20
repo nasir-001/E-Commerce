@@ -20,9 +20,6 @@
                         Customer
                     </div>
                     <div class="col">
-                        Phone
-                    </div>
-                    <div class="col">
                         Time
                     </div>
                     <div class="col">
@@ -38,9 +35,7 @@
                         <div class="col ml-1">
                            <h4> {{ $order->billing_first_name }}</h4>
                         </div>
-                        <div class="col">
-                            {{ $order->billing_phone }}
-                        </div>
+                       
                         <div class="col">
                             {{ $order->created_at }}
                         </div>

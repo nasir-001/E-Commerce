@@ -21,7 +21,7 @@
                             <div class="box">
                                 <img class="shadow-lg" style="border: 3px solid lightgray" src="{{ asset('images/welcome2.jpg') }}" width="150px"><br>
                                 {{ $product->details }}
-                                <h5 class="mb-5" style="color: black; background: lightgray; width: 100px">NGN {{ $product->price }}</h5>
+                                <h5 class="mb-4" style="color: black; background: lightgray; width: 100px">NGN {{ $product->price }}</h5>
                             </div>
                         </a>
                     </div>

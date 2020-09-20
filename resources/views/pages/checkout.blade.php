@@ -2,7 +2,7 @@
 @include('includes/topnav')
 
     <div class="container">
-        <h1 class="mt-2 mb-5">Checkout</h1>
+        <h1 class="mt-2 display-4">Checkout</h1>
         <div class="row">
             <div class="col">
                 <h4 class="mb-4 mt-2"><strong>Billing Details</strong></h4>
