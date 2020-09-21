@@ -78,9 +78,10 @@ class OrdersController extends Controller
         $order->shipped = true;
         $order->save();
         $orders = Order::orderBy('created_at', 'desc')->get();
-        return view('orders.orders')->with([
-            'orders' => $orders,
-        ]);
+        // return view('orders.orders')->with([
+        //     'orders' => $orders,
+        // ]);
+        return redirect()->route('platform.order.list');
     }
 
     /**

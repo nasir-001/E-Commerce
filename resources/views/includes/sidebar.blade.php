@@ -18,7 +18,7 @@
         <ul class="side-menu">
             @foreach ($categories as $category)
                 <li class="list-unstyled">
-                    <a  class="text-right" href="/category/{{ $category->id }}">{{ $category->name }}</a>
+                    <a style="text-transform: uppercase" class="text-right" href="/category/{{ $category->id }}">{{ $category->name }}</a>
                 </li> 
                 <hr>
             @endforeach

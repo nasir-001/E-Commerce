@@ -155,7 +155,7 @@
             <div class="col-md">
                <div class="ftco-footer-widget mb-4">
                 <h2 class="ftco-heading-2">About Us</h2>
-                <p>This is a Online shopping application, where you can create your account and proceed to buy
+                <p>This is a Online shopping store, where you can create your account and proceed to buy
                   our product at affordable price with fast delivery within 24hours.<br>Note: You can also buy product as a guest(without creating an account)</p>
                 <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                   <li><a href="#"><span class="fab fa-twitter"></span></a></li>
@@ -181,11 +181,11 @@
               <div class="ftco-footer-widget mb-4 ml-md-4">
                 <h2 class="ftco-heading-2">How it works</h2>
                 <ul class="list-unstyled">
-                  <li><h6 style="color: white" class="py-2 d-block">Register</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Search for product</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Select product</h6></li>
                   <li><h6 style="color: white" class="py-2 d-block">Add to cart</h6></li>
                   <li><h6 style="color: white" class="py-2 d-block">Update quantity</h6></li>
                   <li><h6 style="color: white" class="py-2 d-block">Proceed to checkout</h6></li>
+                  <li><h6 style="color: white" class="py-2 d-block">Pay the bill</h6></li>
                 </ul>
               </div>
             </div>

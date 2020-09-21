@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', 'WelcomePageController@index')->name('welcome');
 
 Auth::routes();
@@ -27,7 +26,7 @@ Route::get('/order/view/{id}', 'OrderProductController@show')->name('order.show'
 
 Route::get('/order/{id}', 'OrdersController@destroy')->name('order.destroy');
 
-Route::post('/order/update/{id}', 'OrdersController@update')->name('order.update');
+Route::any('/order/update/{id}', 'OrdersController@update')->name('order.update');
 
 Route::get('/pay', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 
@@ -41,13 +40,13 @@ Route::resource('/product', 'ProductController');
 
 Route::resource('/category', 'CategoriesController');
 
+Route::get('/thankyou', 'ThankYouController@index')->name('thankyou');
+
+Route::get('/sorry', 'SorryController@index')->name('sorry');
+
 // Gateway
 Route::post('/pay', 'RaveController@initialize')->name('pay');
 
 Route::any('/rave/callback', 'RaveController@callback')->name('callback');
 
 Route::get('/success', 'RaveController@addToOrdersTables')->name('success');
-
-Route::get('/thankyou', 'ThankYouController@index')->name('thankyou');
-
-Route::get('/sorry', 'SorryController@index')->name('sorry');

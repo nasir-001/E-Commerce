@@ -102,7 +102,8 @@ input:checked + .slider:before {
 										<h6> Product Name: <strong> {{ $product->name }}</strong></h6><br>
 										<h6> Product Price: <strong> {{ $product->price }}</strong></h6><br>
 										<h6> Product Quantity: <strong> {{ $product->pivot->quantity }}</strong></h6><br>
-										<h6> Product Details: <strong> {{ $product->details }}</strong></h6>
+										<h6> Product Details: <strong> {{ $product->details }}</strong></h6><br>
+										<h6> Product Description: <strong>{{ $product->description }}</strong></h6>
 									</td>
                                     <td>
 										<div class="container text-center">
@@ -157,7 +158,7 @@ input:checked + .slider:before {
                 <div class="col m-5">
                     Shipped<br>
                     <label class="switch">
-                        <input name="shipped" type="checkbox" required>
+                        <input name="shipped" type="radio" required>
                         <span class="slider round"></span>
                     </label>
                 </div>
