@@ -21,6 +21,7 @@
                     <a href="/product/{{ $product->id }}">
                         <div class="box">
                             <img class="shadow-lg"style="border: 3px solid lightgray" src="{{ asset('images/welcome2.jpg') }}" width="150px"><br>
+                            {{-- <img src="{{ asset('storage/2020') }}"> --}}
                             {{ $product->details }}
                             <h5 class="mb-5" style="color: black; background: lightgray; width: 100px">NGN {{ $product->price }}</h5>
                         </div>

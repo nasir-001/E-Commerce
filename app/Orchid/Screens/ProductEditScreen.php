@@ -164,8 +164,9 @@ class ProductEditScreen extends Screen
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Product $product, Request $request)
-    {   
+    {           
         // dd($request->all());
+
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);
