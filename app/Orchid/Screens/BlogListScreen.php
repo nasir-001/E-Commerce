@@ -1,32 +1,26 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Orchid\Screens;
-
-use Orchid\Platform\Dashboard;
+use App\Orchid\Layouts\BlogListLayout;
+use App\Blog;
 use Orchid\Screen\Actions\Link;
-use Orchid\Screen\Actions\Button;
-use Orchid\Screen\Layout;
 use Orchid\Screen\Screen;
-use Orchid\Screen\Fields\Map;
-use Orchid\Screen\Fields\DateTimer;
 
-class PlatformScreen extends Screen
+class BlogListScreen extends Screen
 {
     /**
      * Display header name.
      *
      * @var string
      */
-    public $name = 'Hamdala Online Store';
+    public $name = 'Blog post';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Administration';
+    public $description = 'All blog post';
 
     /**
      * Query data.
@@ -36,7 +30,7 @@ class PlatformScreen extends Screen
     public function query(): array
     {
         return [
-            'status' => Dashboard::checkUpdate(),
+            'blogs' => Blog::paginate()
         ];
     }
 
@@ -48,7 +42,9 @@ class PlatformScreen extends Screen
     public function commandBar(): array
     {
         return [
-            
+            Link::make('Create new')
+                ->icon('icon-pencil')
+                ->route('platform.blog.edit')
         ];
     }
 
@@ -60,10 +56,7 @@ class PlatformScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::rows([
-                Map::make('Map')
-                    ->title('Select coordinates'),
-            ])
+            BlogListLayout::class
         ];
     }
 }

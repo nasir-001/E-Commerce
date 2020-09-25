@@ -123,22 +123,25 @@ class ProductEditScreen extends Screen
                     ->help('Provide a details for this product'),
 
                 SimpleMDE::make('product.description')
-                    ->required()
+                    // ->required()
                     ->placeholder('Enter the description for this product')
                     ->title('Product desciption'),
 
-                Cropper::make('product.image')
-                    ->required()
+                Picture::make('product.image')
+                    ->targetRelativeUrl()
+                    // ->required()
                     ->horizontal()
                     ->title('Select first image for this product'),
 
-                Cropper::make('product.images')
-                    ->required()
+                Picture::make('product.images')
+                    ->targetRelativeUrl()
+                    // ->required()
                     ->horizontal()
                     ->title('optional image for this product'),
                     
-                Cropper::make('product.images1')
-                    ->required()
+                Picture::make('product.images1')
+                    ->targetRelativeUrl()
+                    // ->required()
                     ->horizontal()
                     ->title('Optional image for this product'),
 
@@ -164,9 +167,7 @@ class ProductEditScreen extends Screen
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createOrUpdate(Product $product, Request $request)
-    {           
-        // dd($request->all());
-
+    {    
         $product->fill($request->get('product'))->save();
         $category = $request->get('category');
         $product->categories()->attach($category);

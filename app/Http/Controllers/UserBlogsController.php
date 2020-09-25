@@ -2,21 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\OrderProduct;
-use App\Order;
-use Orchid\Screen\Switcher;
+use App\User;
 
-class OrderProductController extends Controller
+use Illuminate\Http\Request;
+
+class UserBlogsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(OrderProduct $order, Request $request)
+    public function index()
     {
-       
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('blogs.blogs')->with('blogs', $user->blogs);
     }
 
     /**
@@ -37,26 +48,18 @@ class OrderProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show($id)
     {
-        $order = Order::find($id);
-        $orders = Order::orderBy('created_at', 'desc')->get();
-        $products = $order->products;
-
-        // dd($products);
-        return view('orders.order')->with([
-            'products' => $products,
-            'orders' => $orders,
-            'order' => $order
-        ]);
+        //
     }
 
     /**
@@ -90,6 +93,6 @@ class OrderProductController extends Controller
      */
     public function destroy($id)
     {
-
+        //
     }
 }

@@ -71,7 +71,7 @@ Breadcrumbs::for('platform.category.list', function ($trail) {
     $trail->push('All categories');
 });
 
-Breadcrumbs::for('platform.product.edit', function($trail) {
+Breadcrumbs::for('platform.product.create', function($trail) {
     $trail->parent('platform.index');
     $trail->push('Create products');
 });

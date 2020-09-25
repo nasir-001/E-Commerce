@@ -76,4 +76,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Order');
     }
+
+    public function blogs()
+    {
+        return $this->hasMany('App\Blog');
+    }
 }

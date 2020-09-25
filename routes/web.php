@@ -6,6 +6,8 @@ Route::get('/', 'WelcomePageController@index')->name('welcome');
 
 Auth::routes();
 
+// E-Commerce
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('logout', 'Auth\LoginController@logout');
@@ -43,6 +45,24 @@ Route::resource('/category', 'CategoriesController');
 Route::get('/thankyou', 'ThankYouController@index')->name('thankyou');
 
 Route::get('/sorry', 'SorryController@index')->name('sorry');
+
+// Blog
+
+Route::get('/blogs', 'BlogsController@index')->name('allBlogs');
+
+Route::get('/blog/create', 'BlogsController@create')->name('blog.create');
+
+Route::post('/blog/store', 'BlogsController@store')->name('blog.store');
+
+Route::get('/blogs/{id}', 'BlogsController@show')->name('blog.show');
+
+Route::get('/blogs/edit/{id}', 'BlogsController@edit')->name('blog.edit');
+
+Route::post('/blogs/update/{id}', 'BlogsController@update')->name('blog.update');
+
+Route::delete('/blogs/delete/{id}', 'BlogsController@destroy')->name('blog.destroy');
+
+Route::get('blog/all', 'UserBlogsController@index')->name('my.blogs');
 
 // Gateway
 Route::post('/pay', 'RaveController@initialize')->name('pay');

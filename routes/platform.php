@@ -25,6 +25,8 @@ use App\Orchid\Screens\ProductListScreen;
 use App\Orchid\Screens\OrderListScreen;
 use App\Orchid\Screens\OrderEditScreen;
 use App\Http\Controllers\OrderController;
+use App\Orchid\Screens\BlogEditScreen;
+use App\Orchid\Screens\BlogListScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +78,13 @@ Route::screen('product/{product?}', ProductEditScreen::class)->name('platform.pr
 
 // Listing all Product Route
 Route::screen('products', ProductListScreen::class)->name('platform.product.list');
+
+// Single Blog
+Route::screen('blog/{blog?}', BlogEditScreen::class)->name('platform.blog.edit');
+
+// All Blogs
+
+Route::screen('blogs', BlogListScreen::class)->name('platform.blog.list');
 
 // List all orders
 

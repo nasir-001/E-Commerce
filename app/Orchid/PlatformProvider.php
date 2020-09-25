@@ -97,6 +97,16 @@ class PlatformProvider extends OrchidServiceProvider
             ItemMenu::label('View products')
                 ->icon('icon-modules')
                 ->route('platform.product.list'),
+            
+            // ItemMenu::label('Post blog')
+            //     ->icon('icon-bubbles')
+            //     ->route('platform.blog.edit')
+                
+
+            ItemMenu::label('View blog post')
+                ->icon('icon-bubbles')
+                ->route('platform.blog.list')
+                ->title('Blog site'),
 
             ItemMenu::label('Email sender')
                 ->icon('icon-envelope-letter')

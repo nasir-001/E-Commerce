@@ -69,7 +69,7 @@ input:checked + .slider:before {
 @section('description', __('All information for this order'))
 
 @section('navbar')
-    
+  <a href="{{ route('platform.order.list') }}" class="btn btn-success float-right mr-5">Go back <i class="fas fa-arrow-circle-left ml-2"></i></a>
 @stop
 
 @section('content')
@@ -79,8 +79,9 @@ input:checked + .slider:before {
         <div class="row">
 			
             <div class="col">
-				<a href="{{ route('platform.order.list') }}" class="btn btn-success float-right mr-5">Go back <i class="fas fa-arrow-circle-left ml-2"></i></a>
+				
                 <div class="container">
+					{{-- {{ $order->error }} --}}
                     <div class="container mt-5">
 						<div class="row fill-viewport align-items-start">
 						  <div class="col-12 col-md-6 mx-auto text-center">
@@ -143,7 +144,7 @@ input:checked + .slider:before {
 							<h4 for="">Amount Paid:</h4>
 							<h4><li class="list-group-item mt-2 mb-2">{{ $order->billing_total }}</li></h4>
 							<h4 for="">Order Time:</h4>
-              <h4><li class="list-group-item mt-2 mb-2">{{ $order->created_at }}</li></h4>
+              				<h4><li class="list-group-item mt-2 mb-2">{{ $order->created_at }}</li></h4>
               
 						</ul>
 							

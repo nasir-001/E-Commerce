@@ -50,17 +50,17 @@
                 <div class="row mb-5">   
                     <div class="col-md-5 col-lg-5 col-sm-5 col-xl-3">
                         <div class="card active product-section-image">
-                            <img id="currentImage" class="card" src="{{ asset('images/welcome2.jpg') }}">
+                            <img id="currentImage" class="shadow-lg"style="border: 3px solid lightgray" src="{{ $product->image }}" width="200px">
                         </div>
                         <div class="product-section-images">
                             <div class="product-section-thumbnail selected">
-                                <img style="width: 40px; height: 40px" src="{{ asset('images/welcome3.jpg') }}">
+                                <img style="width: 40px; height: 40px" src="{{ $product->image }}" width="200px">
                             </div>
                             <div class="product-section-thumbnail">
-                                <img style="width: 40px; height: 40px" src="{{ asset('images/welcome4.jpg') }}">
+                                <img style="width: 40px; height: 40px" src="{{ $product->images }}" width="200px">
                             </div>
                             <div class="product-section-thumbnail">
-                                <img style="width: 40px; height: 40px" src="{{ asset('images/welcome6.jpg') }}">
+                                <img style="width: 40px; height: 40px" src="{{ $product->images1 }}" width="200px">
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,8 @@
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="name" value="{{ $product->name }}">
                             <input type="hidden" name="details" value="{{ $product->details }}">
-                            <input type="hidden" name="price" value="{{ $product->price }}">           
+                            <input type="hidden" name="price" value="{{ $product->price }}"> 
+                            <input type="hidden" name="image" value="{{ $product->image }}">          
                             <a href="/category" class="btn btn-outline-secondary">shopping</a>
                             <button type="submit" class="btn btn-outline-success">Add to Cart</button>
                         </form>

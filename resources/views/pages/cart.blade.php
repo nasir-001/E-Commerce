@@ -42,6 +42,7 @@
                                 <div class="cols">
                                     <a href="/product/{{ $product->id }}">
                                         <img src="{{ asset('images/welcome2.jpg') }}" width="80">
+                                        {{-- <img src="{{ $product->image }}" width="80px"> --}}
                                     </a>
                                 </div>
                                 <div class="col-md-3 col-sm-2 col-lg-3 col-xl-3 mt-3">
