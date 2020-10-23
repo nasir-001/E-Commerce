@@ -149,10 +149,10 @@
 
 </style>
 <body>
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md">
+    <footer class="ftco-footer ftco-bg-dark ftco-section bottom-0">
+        <div class="mx-auto">
+          <div class="flex flex-wrap mb-5">
+            <div class="w-full mx-5 md:w-2/6">
                <div class="ftco-footer-widget mb-4">
                 <h2 class="ftco-heading-2">About Us</h2>
                 <p>This is a Online shopping store, where you can create your account and proceed to buy
@@ -163,52 +163,49 @@
                   <li><a href="#"><span class="fab fa-instagram"></span></a></li>
                 </ul>
               </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Why Us?</h2>
-                <ul class="list-unstyled">
-                  <li><h6 style="color: white" class="py-2 d-block">Good Service</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Genuine Business</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Fast Reply</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Fast Delivery</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Discount on every transaction</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Blog</h6></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4 ml-md-4">
-                <h2 class="ftco-heading-2">How it works</h2>
-                <ul class="list-unstyled">
-                  <li><h6 style="color: white" class="py-2 d-block">Select product</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Add to cart</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Update quantity</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Proceed to checkout</h6></li>
-                  <li><h6 style="color: white" class="py-2 d-block">Pay the bill</h6></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Want to know more?</h2>
-                <div class="block-23 mb-3">
-                  <ul class="list-unstyled">
-                    <li class="mt-1"><span class="fas fa-globe" style="color: white"></span><span class="text" style="color: white"> No.12 Mamman Yola Street Hayind Dogo Samaru Zaria</span></li>
-                    <li class="mt-1"><span class="fas fa-phone" style="color: white"></span><span class="text" style="color: white"> 08139332116</span></li>
-                    <li class="mt-1"><span class="fas fa-envelope" style="color: white"></span><span class="text" style="color: white"> nasirlawal001@gmail.com</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-      
-              <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i style="color: red" class="fas fa-heart" aria-hidden="true"></i> by Nasir
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            </div>
+			</div>
+			<div class="w-full text-center md:w-1/5">
+				<div class="ftco-footer-widget mb-4">
+				<h2 class="ftco-heading-2">Why Us?</h2>
+				<ul class="list-unstyled">
+					<li><h6 class="text-gray-500 py-2 d-block">Good Service</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Genuine Business</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Fast Reply</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Fast Delivery</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Discount on every transaction</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Blog</h6></li>
+				</ul>
+				</div>
+			</div>
+			<div class="w-full text-center md:w-1/5">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+				<h2 class="ftco-heading-2">How it works</h2>
+				<ul class="list-unstyled">
+					<li><h6 class="text-gray-500 py-2 d-block">Select product</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Add to cart</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Update quantity</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Proceed to checkout</h6></li>
+					<li><h6 class="text-gray-500 py-2 d-block">Pay the bill</h6></li>
+				</ul>
+				</div>
+			</div>
+			<div class="w-full text-center md:w-1/5">
+				<div class="ftco-footer-widget mb-4">
+				<h2 class="ftco-heading-2">Want to know more?</h2>
+				<div class="block-23 mb-3">
+					<ul class="list-unstyled">
+					<li class="mt-1"><span class="fas fa-globe" style="color: white"></span><span class="text text-gray-500 ml-3"> No.12 Mamman Yola Street Hayind Dogo Samaru Zaria</span></li>
+					<li class="mt-1"><span class="fas fa-phone" style="color: white"></span><span class="text text-gray-500 ml-3"> 08139332116</span></li>
+					<li class="mt-1"><span class="fas fa-envelope" style="color: white"></span><span class="text text-gray-500 ml-3"> nasirlawal001@gmail.com</span></li>
+					</ul>
+				</div>
+				</div>
+			</div>
+		</div>
+        </div>
+          <div class="text-center">
+            <div class="px-6 mx-auto text-gray-500 w-full text-center">
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i style="color: red" class="fas fa-heart" aria-hidden="true"></i> by Nasir
           </div>
         </div>
       </footer>

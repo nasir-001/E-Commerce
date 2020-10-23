@@ -10,7 +10,7 @@
             <img src="/storage/cover_images/{{ $blog->cover_image }}" style="width: 100%">
             <br><br>
             <div>
-                {{ $blog->body }}
+                {{  $blog->body  }}
             </div>
             <hr>
             <small>Written on {{ $blog->created_at }} by <p>{{ $blog->user->name }}</p></small>

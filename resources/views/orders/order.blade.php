@@ -59,6 +59,7 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  
 }
 
 .slider.round:before {
@@ -73,13 +74,9 @@ input:checked + .slider:before {
 @stop
 
 @section('content')
-
     <div class="admin-wrapper py-3">
-		
         <div class="row">
-			
             <div class="col">
-				
                 <div class="container">
 					{{-- {{ $order->error }} --}}
                     <div class="container mt-5">
@@ -145,10 +142,7 @@ input:checked + .slider:before {
 							<h4><li class="list-group-item mt-2 mb-2">{{ $order->billing_total }}</li></h4>
 							<h4 for="">Order Time:</h4>
               				<h4><li class="list-group-item mt-2 mb-2">{{ $order->created_at }}</li></h4>
-              
 						</ul>
-							
-						
                 </div>
             </div>
         </div>
@@ -167,8 +161,7 @@ input:checked + .slider:before {
 					<button style="width: 60px" class="btn btn-outline-primary m-5">Save</button> 
                 </div>
             </div>
-        </form>
-            
+        </form>   
     </div>
 
 @stop

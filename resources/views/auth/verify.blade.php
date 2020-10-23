@@ -1,28 +1,20 @@
-@extends('layouts.app')
+<x-template.base content-full title="Verify your email">
+    <x-template.branded>
+        <div class="space-y-6 mx-auto text-center">
+            <div class="text-gray-600">
+                @if (session('resent'))
+                    We have sent you a fresh verification link, please check your email.
+                @else
+                    You must verify your email address before proceeding. Please check your email for a verification link.
+                @endif
+            </div>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+            <div class="mx-auto w-16 h-px block bg-gray-400"></div>
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
-
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
-                </div>
+            <div>
+                Didn't get the email?
+                <x-form.action :action="route('verification.resend')" method="POST" class="font-semibold text-brand-600 hover:text-brand-800">Resend it</x-form.action>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </x-template.branded>
+</x-template.base>

@@ -1,5 +1,1 @@
-@extends('errors::minimal')
-
-@section('title', __('Service Unavailable'))
-@section('code', '503')
-@section('message', __($exception->getMessage() ?: 'Service Unavailable'))
+<x-template.error code="503" :message="$exception->getMessage() ?: 'We are performing some maintenance, check back soon'" />

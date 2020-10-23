@@ -1,100 +1,55 @@
-@extends('layouts.app')
 <style>
-
-input[type=text], input[type=password], input[type=email], input[type=number], input[type=select] {
-    background-color: #f6f6f6;
-    height: 60px;
-    border: none;
-    color: #0d0d0d;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    width: 100%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-}
-
-</style>
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" style="height: 600px;">
-                <div style="font-size: 50px;" class="card-header text-center">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row mt-5">
-                            <label style="font-size: 20px;" for="email" class="col-md-4 mt-2 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mt-5">
-                            <label style="font-size: 20px;" for="password" class="col-md-4 mt-2 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row mt-3 text-right">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary btn-lg text-right">
-                                    {{ __('Login') }}
-                                </button>
+    input[type=text], input[type=password], input[type=email], input[type=number], input[type=select] {
+        background-color: #f6f6f6;
+        height: 60px;
+        border: none;
+        color: #0d0d0d;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 100%;
+        border: 2px solid #f6f6f6;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    </style>
+<x-template.base content-full title="Sign in">
+    <x-template.form subtext="Sign in to your account" :action="route('login')" method="POST">
+        <div class="space-y-6">
+            <x-form.input autofocus required name="email" type="email" label="Email" placeholder="you@example.com" />
+            <x-form.input required name="password" type="password" label="Password" placeholder="••••••••" />
+        </div>
+        
+        <div class="flex items-center justify-between">
+            <x-form.checkbox class="form-checkbox" checked name="remember" label="Remember me" />
             
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}"> 
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                            <div class="col-md-8 offset-md-4">
-                                <a class="btn btn-link" href="{{ route('guestCheckout.index') }}">Checkout as a Guest</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <button class="btn px-6 py-3 bg-blue-500 rounded-full text-sm">Sign in</button>
             
         </div>
-    </div>
-</div>
-@endsection
+        <div class="col-md-8 offset-md-4">
+            <a class="bg-green-500 rounded-lg py-3 px-4" href="{{ route('guestCheckout.index') }}">Checkout as a Guest</a>
+        </div>
+
+        <div class="text-sm text-center">
+            @if (Route::has('register'))
+                <x-link class="font-semibold" :href="route('register')" text="Create account" />
+            @endif
+
+            @if (Route::has('register') and Route::has('password.request'))
+                <span class="mx-1 text-gray-500">&middot;</span>
+            @endif
+
+            @if (Route::has('password.request'))
+                <x-link :href="route('password.request')" text="Forgot password?" />
+            @endif
+        </div>
+    </x-template.form>
+</x-template.base>

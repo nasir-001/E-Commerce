@@ -61,7 +61,7 @@ protected function addToOrdersTables(Request $request)
    * @return void
    */
 		
-	public function callback(Request  $request, $id)
+	public function callback(Request  $request)
 	{
 
 		$json = json_decode($request->resp);
@@ -71,17 +71,17 @@ protected function addToOrdersTables(Request $request)
 		
 		if ($payload->data->chargedamount > 0 )
 		{
-			Cart::clear();
-			$order = Order::find($id);
-			$order->error = "None";
-			$order->save();
+			// Cart::clear();
+			// $order = Order::find($id);
+			// $order->error = "None";
+			// $order->save();
 			return redirect()->route('thankyou');
 
 		} else {
 
-			$order = Order::find($id);
-			$order->error = "Payment not verified";
-			$order->save();
+			// $order = Order::find($id);
+			// $order->error = "Payment not verified";
+			// $order->save();
 			return redirect()->route('sorry');
 		}
 

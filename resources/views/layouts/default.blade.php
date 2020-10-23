@@ -17,25 +17,18 @@
     }
 </style>
 <body>
-    <div id="container">
-
-
-        <div id="topnav">
+    <div id="container" class="bg-gray-200">
+        <div class="relative" id="topnav">
             @include('includes.topnav')
         </div>
         
-        <div class="row">
-            <div class="col">
-                
-            </div>
-            <div class="col">
+        <div class="flex relative px-2 sm:mx-auto sm:px-12">
+            <div class="hidden sm:block sm:w-1/5 top-0">
                 @include('includes.sidebar')
             </div>
-
-            <div class="col-9">
-                <div id="main">
-                    @yield('content')
-                </div>
+            <div class="sm:mx-3 lg:mx-0 xl:mx-0"></div>
+            <div id="main" class="sm:w-4/5 mt-16">
+                @yield('content')
             </div>
         </div>
 
