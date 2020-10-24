@@ -70,3 +70,6 @@ Route::post('/pay', 'RaveController@initialize')->name('pay');
 Route::any('/rave/callback', 'RaveController@callback')->name('callback');
 
 Route::get('/success', 'RaveController@addToOrdersTables')->name('success');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

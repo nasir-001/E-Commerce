@@ -14,7 +14,6 @@ module.exports = {
                 outline: `0 0 0 3px ${theme('colors.brand.500')}60`,
                 'inner-md': 'inset 0 2px 3px 0 rgba(0, 0, 0, 0.175)',
             }),
-             
         },
         customForms: theme => ({
             default: {
@@ -41,9 +40,6 @@ module.exports = {
     variants: {},
     plugins: [
         require('@tailwindcss/custom-forms'),
-        require('tailwindcss-plugins/pagination')({
-        /* Customizations here... */
-    }),
     ],
     purge: [
         './app/**/*.php',

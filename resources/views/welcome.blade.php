@@ -107,11 +107,11 @@
         @include('includes.footer')
     </div>
     <script>
-		//Javascript to toggle the menu
-		document.getElementById('nav-toggle').onclick = function(){
+        //Javascript to toggle the menu
+        document.getElementById('nav-toggle').onclick = function(){
             console.log("thisnjdfjs");
-			document.getElementById("nav-content").classList.toggle("hidden");
-		}
-	</script>
+            document.getElementById("nav-content").classList.toggle("hidden");
+        }
+    </script>
 </body>
 </html>
